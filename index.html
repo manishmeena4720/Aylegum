@@ -1,0 +1,2643 @@
+﻿<!DOCTYPE html>
+<html lang="en-US" class="no-ie no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+	<script
+		type="text/javascript">(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "9700abca30", applicationID: "9339867" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[n]) { var i = e[n] = { exports: {} }; t[n][0].call(i.exports, function (e) { var i = t[n][1][e]; return r(i || e) }, i, i.exports) } return e[n].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[i]); return r }({ 1: [function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [u.now()].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[e] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [u.now(), t, n], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [arguments, this, t], n), t } finally { c.emit("fn-end", [u.now()], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[e] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [t, u.now(), !1, e]) } }, {}], 2: [function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[n[r]], "object" != typeof e) return; return e = e[n[n.length - 1]] } } e.exports = { getConfiguration: r } }, {}], 3: [function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {}], 4: [function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {}], 5: [function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", ["fp", Math.floor(t.startTime)]) : "first-contentful-paint" === t.name && d("timing", ["fcp", Math.floor(t.startTime)]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [n[n.length - 1]]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [t]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", ["fi", e, n]) } } function f(t) { d("pageHide", [p.now(), t]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: ["paint"] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: ["largest-contentful-paint"] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = ["click", "keydown", "mousedown", "pointerdown", "touchstart"]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {}], 6: [function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[a] !== n[a]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[1]) } e.exports = { agent: i, version: o, match: r } }, {}], 7: [function (t, e, n) { function r(t) { function e() { t(a && document[a] ? document[a] : document[i] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {}], 8: [function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[o] = e(r, t[r]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {}], 9: [function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[r] = t[e + r]; return o } e.exports = r }, {}], 10: [function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {}], ee: [function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[s].apply(f, r); var p = d[w[n]]; return p && p.push([b, n, r, f]), f } } function o(t, e) { y[t] = v(t).concat(e) } function m(t, e) { var n = y[t]; if (n) for (var r = 0; r < n.length; r++)n[r] === e && n.splice(r, 1) } function v(t) { return y[t] || [] } function g(t) { return p[t] = p[t] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[n] = e, e in d || (d[e] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {}], gos: [function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[e]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[e] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {}], handle: [function (t, e, n) { function r(t, e, n, r) { i.buffer([t], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {}], id: [function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {}], loader: [function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[0]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[e] || (t[e] = n) }); var n = a(); f("mark", ["onload", n + M.offset], null, "api"), f("timing", ["load", n]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", ["domContent", a() + M.offset], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1209.min.js" }, O = y && w && w[g] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[g] ? (v[g]("DOMContentLoaded", o, !1), m[g]("load", r, !1)) : (v[h]("onreadystatechange", i), m[h]("onload", r)), f("mark", ["firstbyte", a.getLastTimestamp()], null, "api"); var R = 0 } }, {}], "wrap-function": [function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([l, "", [o, a, c], s], t) } f(n + "start", [o, a, c], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [o, a, m], s, u), m } finally { f(n + "end", [o, a, p], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[p] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[u], f = t[c], a(f) || (t[c] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([c, n, r, o], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[n] }, set: function (e) { return t[n] = e, e } }) }), e } catch (o) { i([o], n) } for (var a in t) l.call(t, a) && (e[a] = t[a]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[p]) } function f(t, e) { var n = e(t); return n[p] = t, o(t, n, s), n } function c(t, e, n) { var r = t[e]; t[e] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[n] = arguments[n]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {}] }, {}, ["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="pingback" href="https://lawyers-attorneys.vamtam.com/xmlrpc.php">
+	<style type="text/css" media="screen">
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td a.ui-state-active,
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td a.ui-state-active:hover,
+		body #booked-profile-page input[type=submit].button-primary:hover,
+		body .booked-list-view button.button:hover,
+		body .booked-list-view input[type=submit].button-primary:hover,
+		body table.booked-calendar input[type=submit].button-primary:hover,
+		body .booked-modal input[type=submit].button-primary:hover,
+		body table.booked-calendar th,
+		body table.booked-calendar thead,
+		body table.booked-calendar thead th,
+		body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,
+		body #booked-profile-page .booked-profile-header,
+		body #booked-profile-page .booked-tabs li.active a,
+		body #booked-profile-page .booked-tabs li.active a:hover,
+		body #booked-profile-page .appt-block .google-cal-button>a:hover,
+		#ui-datepicker-div.booked_custom_date_picker .ui-datepicker-header {
+			background: #d8d8d8 !important;
+		}
+
+		body #booked-profile-page input[type=submit].button-primary:hover,
+		body table.booked-calendar input[type=submit].button-primary:hover,
+		body .booked-list-view button.button:hover,
+		body .booked-list-view input[type=submit].button-primary:hover,
+		body .booked-modal input[type=submit].button-primary:hover,
+		body table.booked-calendar th,
+		body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,
+		body #booked-profile-page .booked-profile-header,
+		body #booked-profile-page .appt-block .google-cal-button>a:hover {
+			border-color: #d8d8d8 !important;
+		}
+
+		body table.booked-calendar tr.days,
+		body table.booked-calendar tr.days th,
+		body .booked-calendarSwitcher.calendar,
+		body #booked-profile-page .booked-tabs,
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar thead,
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar thead th {
+			background: #cca876 !important;
+		}
+
+		body table.booked-calendar tr.days th,
+		body #booked-profile-page .booked-tabs {
+			border-color: #cca876 !important;
+		}
+
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td.ui-datepicker-today a,
+		#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td.ui-datepicker-today a:hover,
+		body #booked-profile-page input[type=submit].button-primary,
+		body table.booked-calendar input[type=submit].button-primary,
+		body .booked-list-view button.button,
+		body .booked-list-view input[type=submit].button-primary,
+		body .booked-list-view button.button,
+		body .booked-list-view input[type=submit].button-primary,
+		body .booked-modal input[type=submit].button-primary,
+		body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button,
+		body #booked-profile-page .booked-profile-appt-list .appt-block.approved .status-block,
+		body #booked-profile-page .appt-block .google-cal-button>a,
+		body .booked-modal p.booked-title-bar,
+		body table.booked-calendar td:hover .date span,
+		body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active,
+		body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active:hover,
+		.booked-ms-modal .booked-book-appt
+
+		/* Multi-Slot Booking */
+			{
+			background: #cca876;
+		}
+
+		body #booked-profile-page input[type=submit].button-primary,
+		body table.booked-calendar input[type=submit].button-primary,
+		body .booked-list-view button.button,
+		body .booked-list-view input[type=submit].button-primary,
+		body .booked-list-view button.button,
+		body .booked-list-view input[type=submit].button-primary,
+		body .booked-modal input[type=submit].button-primary,
+		body #booked-profile-page .appt-block .google-cal-button>a,
+		body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button,
+		body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active,
+		body .booked-list-view a.booked_list_date_picker_trigger.booked-dp-active:hover {
+			border-color: #cca876;
+		}
+
+		body .booked-modal .bm-window p i.fa,
+		body .booked-modal .bm-window a,
+		body .booked-appt-list .booked-public-appointment-title,
+		body .booked-modal .bm-window p.appointment-title,
+		.booked-ms-modal.visible:hover .booked-book-appt {
+			color: #cca876;
+		}
+
+		.booked-appt-list .timeslot.has-title .booked-public-appointment-title {
+			color: inherit;
+		}
+	</style>
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'>
+
+	<title>Aylegum Advisory LLP</title>
+	<link rel="shortcut icon" href="./assets/logosmall.png" type="image/x-icon">
+	<link rel="canonical" href="index-1.htm">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Home - Single lawyer - Lawyers &amp; Attorneys Theme">
+	<meta property="og:description"
+		content="MY PHILOSOPHY: “I WILL FIGHT TO PROTECT YOUR LEGAL RIGHTS UNDER THE LAW.” I have a lot of training and certification as a lawyer! Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation...">
+	<meta property="og:url" content="https://lawyers-attorneys.vamtam.com/single-lawyer/">
+	<meta property="og:site_name" content="Lawyers &amp; Attorneys Theme">
+	<meta property="article:modified_time" content="2020-08-23T11:23:51+00:00">
+	<meta property="og:image" content="./assets/logosmall.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="7 minutes">
+	<script type="application/ld+json"
+		class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://lawyers-attorneys.vamtam.com/#website","url":"https://lawyers-attorneys.vamtam.com/","name":"Lawyers &amp; Attorneys Theme","description":"","potentialAction":[{"@type":"SearchAction","target":"https://lawyers-attorneys.vamtam.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://lawyers-attorneys.vamtam.com/single-lawyer/#primaryimage","inLanguage":"en-US","url":"https://lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/photo-3.jpg","width":290,"height":140},{"@type":"WebPage","@id":"https://lawyers-attorneys.vamtam.com/single-lawyer/#webpage","url":"https://lawyers-attorneys.vamtam.com/single-lawyer/","name":"Home - Single lawyer - Lawyers &amp; Attorneys Theme","isPartOf":{"@id":"https://lawyers-attorneys.vamtam.com/#website"},"primaryImageOfPage":{"@id":"https://lawyers-attorneys.vamtam.com/single-lawyer/#primaryimage"},"datePublished":"2014-09-26T17:50:10+00:00","dateModified":"2020-08-23T11:23:51+00:00","breadcrumb":{"@id":"https://lawyers-attorneys.vamtam.com/single-lawyer/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://lawyers-attorneys.vamtam.com/single-lawyer/"]}]},{"@type":"BreadcrumbList","@id":"https://lawyers-attorneys.vamtam.com/single-lawyer/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://lawyers-attorneys.vamtam.com/","url":"https://lawyers-attorneys.vamtam.com/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://lawyers-attorneys.vamtam.com/single-lawyer/","url":"https://lawyers-attorneys.vamtam.com/single-lawyer/","name":"Home &#8211; Single lawyer"}}]}]}</script>
+
+	<link rel='dns-prefetch' href='//fonts.googleapis.com'>
+	<link rel='dns-prefetch' href='./index.htm'>
+	<link rel="alternate" type="application/rss+xml" title="Lawyers &amp; Attorneys Theme &raquo; Feed"
+		href="./feed/index.htm.rss">
+	<link rel="alternate" type="application/rss+xml" title="Lawyers &amp; Attorneys Theme &raquo; Comments Feed"
+		href="./comments/feed/index.htm.rss">
+	<script type="text/javascript">
+		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/lawyers-attorneys.vamtam.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2" } };
+		!function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
+	</script>
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='./wp-includes/css/dist/block-library/style.min.css?ver=5.7.2'
+		type='text/css' media='all'>
+	<link rel='stylesheet' id='booked-icons-css' href='./wp-content/plugins/booked/assets/css/icons.css?ver=2.3'
+		type='text/css' media='all'>
+	<link rel='stylesheet' id='booked-tooltipster-css'
+		href='./wp-content/plugins/booked/assets/js/tooltipster/css/tooltipster.css?ver=3.3.0' type='text/css'
+		media='all'>
+	<link rel='stylesheet' id='booked-tooltipster-theme-css'
+		href='./wp-content/plugins/booked/assets/js/tooltipster/css/themes/tooltipster-light.css?ver=3.3.0'
+		type='text/css' media='all'>
+	<link rel='stylesheet' id='booked-animations-css'
+		href='./wp-content/plugins/booked/assets/css/animations.css?ver=2.3' type='text/css' media='all'>
+	<link rel='stylesheet' id='booked-css-css' href='./wp-content/plugins/booked/dist/booked.css?ver=2.3'
+		type='text/css' media='all'>
+	<link rel='stylesheet' id='contact-form-7-css'
+		href='./wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.4' type='text/css' media='all'>
+	<link rel='stylesheet' id='rs-plugin-settings-css'
+		href='./wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.3.1' type='text/css' media='all'>
+	<style id='rs-plugin-settings-inline-css' type='text/css'>
+		#rs-demo-id {}
+	</style>
+	<link rel='stylesheet' id='select2-css'
+		href='./wp-content/themes/lawyers-attorneys/wpv_theme/assets/css/select2.css?ver=5.7.2' type='text/css'
+		media='all'>
+	<link rel='stylesheet' id='front-magnific-popup-css'
+		href='./wp-content/themes/lawyers-attorneys/wpv_theme/assets/css/magnific.css?ver=5.7.2' type='text/css'
+		media='all'>
+	<link rel='stylesheet' id='vamtam-front-all-css'
+		href='./wp-content/themes/lawyers-attorneys/cache/all.css?ver=1618240202' type='text/css' media='all'>
+	<style id='vamtam-front-all-inline-css' type='text/css'>
+		.screens .linkarea img {
+			box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+			transition: all .3s ease;
+			border-radius: 2px;
+		}
+
+		.screens .linkarea img:hover {
+			box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.16);
+			margin-top: -10px;
+		}
+
+		.page-id-9611 #style-switcher {
+			display: none;
+		}
+
+		.w-header {
+			text-align: center;
+		}
+
+		.w-header .grid-1-5 {
+			display: inline-block;
+			float: none;
+			vertical-align: top:
+		}
+
+		.w-header h3 {
+			margin: 0px;
+			font-weight: 600;
+			color: #fff;
+		}
+
+		.w-header p {
+			margin-top: 0.5em
+		}
+
+		.w-header .sep-3 {
+			opacity: 0.2;
+		}
+
+		.w-header h1,
+		.w-header h4,
+		.w-header p,
+		.w-white {
+			color: #fff !important;
+		}
+
+		.page-id-9611 h1 {
+			font: normal 3em/1em "Libre Baskerville";
+			letter-spacing: 0.3em;
+		}
+
+		.page-id-9611 h2 {
+			font: normal 2.4em/1em "Libre Baskerville";
+			color: #7C8A8D;
+			margin-bottom: 10px;
+		}
+
+		.big-text {
+			font-size: 1em;
+			line-height: 1em;
+			font-weight: 100;
+		}
+
+		.plugin-logos img {
+			padding: 0px 20px;
+			display: inline-block;
+		}
+
+
+		.more-testimonials {
+			border: solid 1px #EDEDED;
+			text-align: center;
+			padding: 20px 30px;
+			border: 1px solid #D9D9D9;
+		}
+
+		.more-testimonials h3 {
+			margin-bottom: 9px;
+			margin-top: 6px;
+		}
+
+		.more-testimonials p {
+			margin-top: 0px;
+		}
+
+		.dark-bg h2 {
+			color: #fff !important;
+		}
+
+		@media (max-width: 958px) {
+			.twitter-button {
+				margin-bottom: 20px;
+			}
+
+			.w-header h1 {
+				font-size: 1.8em;
+			}
+
+			.w-hide-bg {
+				padding: 0px !important;
+				background-image: none !important;
+			}
+
+			.dark-bg {
+				background-image: none !important;
+			}
+
+			.w-mobile-hide {
+				display: none;
+			}
+
+			.w-hide-bg .push {
+				display: none;
+			}
+		}
+	</style>
+	<link rel='stylesheet' id='child-theme-style-css'
+		href='https://lawyers-attorneys.vamtam.com/wp-content/themes/lawyers-attorneys-child/style.css?ver=5.7.2'
+		type='text/css' media='all'>
+	<link rel='stylesheet' id='wpv-gfonts-css'
+		href='./css.css?family=Montserrat%3Anormal%2Cbold%7CLibre+Baskerville%3Abold%2Citalic%2Cnormal&#038;subset=latin&#038;ver=19'
+		type='text/css' media='all'>
+	<script type='text/javascript' src='./wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+	<script type='text/javascript' src='./wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
+		id='jquery-migrate-js'></script>
+	<script type='text/javascript' src='./wp-content/plugins/wp-retina-2x/app/retina.min.js?ver=1610453738'
+		id='wr2x-retinajs-js-js'></script>
+	<link rel="https://api.w.org/" href="./wp-json/index.htm.json">
+	<link rel="alternate" type="application/json" href="./wp-json/wp/v2/pages/9404.json">
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="./xmlrpc.php.xml?rsd">
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="./wp-includes/wlwmanifest.xml">
+	<meta name="generator" content="WordPress 5.7.2">
+	<link rel='shortlink' href='index-1.htm?p=9404'>
+	<link rel="alternate" type="application/json+oembed"
+		href="./wp-json/oembed/1.0/embed.json?url=https%3A%2F%2Flawyers-attorneys.vamtam.com%2Fsingle-lawyer%2F">
+	<link rel="alternate" type="text/xml+oembed"
+		href="./wp-json/oembed/1.0/embed.xml?url=https%3A%2F%2Flawyers-attorneys.vamtam.com%2Fsingle-lawyer%2F&#038;format=xml">
+	<style type="text/css">
+		.recentcomments a {
+			display: inline !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+	</style>
+	<meta name="generator"
+		content="Powered by Slider Revolution 6.3.1 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface.">
+	<script type="text/javascript">function setREVStartSize(e) {
+			//window.requestAnimationFrame(function() {				 
+			window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
+			window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
+			try {
+				var pw = document.getElementById(e.c).parentNode.offsetWidth,
+					newh;
+				pw = pw === 0 || isNaN(pw) ? window.RSIW : pw;
+				e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
+				e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
+				e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
+				e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
+				e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
+				e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
+				e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
+				if (e.layout === "fullscreen" || e.l === "fullscreen")
+					newh = Math.max(e.mh, window.RSIH);
+				else {
+					e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+					for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
+					e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
+					e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+					for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
+
+					var nl = new Array(e.rl.length),
+						ix = 0,
+						sl;
+					e.tabw = e.tabhide >= pw ? 0 : e.tabw;
+					e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
+					e.tabh = e.tabhide >= pw ? 0 : e.tabh;
+					e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
+					for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
+					sl = nl[0];
+					for (var i in nl) if (sl > nl[i] && nl[i] > 0) { sl = nl[i]; ix = i; }
+					var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
+					newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
+				}
+				if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));
+				document.getElementById(e.c).height = newh + "px";
+				window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
+			} catch (e) {
+				console.log("Failure at Presize of Slider:" + e)
+			}
+			//});
+		};</script>
+</head>
+
+<body
+	class="page-template-default page page-id-9404 layout-full full pagination-load-more page-vertical-padding-none sticky-header-type-over wpv-not-scrolled no-page-header cbox-share-twitter cbox-share-facebook cbox-share-googleplus cbox-share-pinterest has-header-slider no-header-sidebars responsive-layout no-breadcrumbs no-slider-button-thumbnails sticky-header">
+	<span id="top"></span>
+	<!--<div class="wpv-splash-screen">
+		<div class="wpv-splash-screen-logo"
+			style="background:url(&quot;./wp-content/uploads/2014/09/logo-splash.png&quot;) center center no-repeat">
+		</div>
+	</div>-->
+	<div id="page" class="main-container">
+		<div class="fixed-header-box">
+			<header class="main-header layout-logo-menu header-content-wrapper ">
+				<div id="top-nav-wrapper">
+					<nav class="top-nav fulltext">
+						<div class="limit-wrapper top-nav-inner">
+							<div class="row">
+								<div class="row single-cell">
+									<div class="grid-1-1" id="top-nav-text">
+										<div class="row ">
+											<div class="wpv-grid grid-1-2  wpv-first-level first unextended"
+												style="padding-top:0px;padding-bottom:0px"
+												id="wpv-column-979bce75d4d7a238a0e1c096a68d941d">CALL US:  <a
+													href="tel:+919891142555"><strong>+91 989 114 2555</strong></a></div>
+											<div class="wpv-grid grid-1-2  wpv-first-level unextended"
+												style="padding-top:0px;padding-bottom:0px"
+												id="wpv-column-4676e0f8230c1fbaf7e1540666ee786a">
+												<div class="text-align: right"><span style="vertical-align: top;"><a
+															href="https://www.linkedin.com/in/aman-kaushik-7b4b15211"><span
+																class='icon shortcode theme  use-hover'
+																style='font-size:16px !important;color:#D8D8D8;'>&#57473;</span>  CONNECT
+															WITH US ON LINKEDIN →</a>  
+														<a class="wpv-overlay-search-trigger" href="#"><span
+																class='icon shortcode   use-hover'
+																style='font-size:16px !important;color:#D8D8D8;'>&#57645;</span></a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+				<div class="limit-wrapper">
+					<div class="header-contents">
+						<div class="first-row">
+							<div class="logo-wrapper">
+								<a href="#" id="mp-menu-trigger" class="icon-b" data-icon="&#57801;">Open/Close Menu</a>
+								<a href="#" title="Lawyers &amp; Attorneys Theme" class="logo " style="min-width:270px">
+									<img src="./assets/logo.png" alt="Lawyers &amp; Attorneys Theme" class="normal-logo"
+										height="70" style="padding: 7.5px 0; max-height: 70px;">
+									<img src="./assets/logo (1).png" alt="Lawyers &amp; Attorneys Theme"
+										class="alternative-logo" height="140"
+										style="padding: 7.5px 0; max-height: 70px;">
+								</a>
+								<div class="mobile-logo-additions">
+								</div>
+							</div>
+						</div>
+						<div class="second-row ">
+							<div id="menus">
+								<nav id="main-menu">
+									<a href="#content" title="Skip to content" class="visuallyhidden">Skip to
+										content</a>
+									<div class="menu-main-menu-container">
+										<ul id="menu-main-menu" class="menu">
+											<li id="menu-item-9423"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-9423">
+												<a href="#"><span>Home</span></a>
+											</li>
+											<li id="menu-item-7779"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7779">
+												<a href="#about"><span>About</span></a>
+											</li>
+											<li id="menu-item-7777"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7777">
+												<a><span>Team</span></a>
+												<div class='sub-menu-wrapper'>
+													<ul class="sub-menu">
+														<li id="menu-item-9597"
+															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9597">
+															<a href="#board"><span>Board Of Advisors</span></a>
+														</li>
+														<li id="menu-item-9588"
+															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9588">
+															<a href="#team"><span>Professional Team</span></a>
+														</li>
+													</ul>
+												</div>
+											</li>
+											<li id="menu-item-7885"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7885">
+												<a href="#downloads"><span>Downloads</span></a>
+											</li>
+											<li id="menu-item-8021"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8021">
+												<a href="#practice"><span>Practice
+														Areas</span></a>
+												<div class='sub-menu-wrapper'>
+													<ul class="sub-menu">
+														<li id="menu-item-7738"
+															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7738">
+															<a href="#practice"><span>ENFORCEMENT SERVICES
+																</span></a>
+														</li>
+														<li id="menu-item-7815"
+															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7815">
+															<a href="#practice"><span>DUE DILIGENCE
+																</span></a>
+														</li>
+														<li id="menu-item-7816"
+															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7816">
+															<a href="#practice"><span>LITIGATION
+																</span></a>
+														</li>
+														<li id="menu-item-7739"
+															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7739">
+															<a href="#practice"><span>INVESTIGATION
+																</span></a>
+														</li>
+														<li id="menu-item-7816"
+															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7816">
+															<a href="#practice"><span>ASSET DISPOSAL
+																</span></a>
+														</li>
+														<li id="menu-item-7816"
+															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7816">
+															<a href="#practice"><span>SECURITY SERVICES
+																</span></a>
+														</li>
+														<li id="menu-item-7816"
+															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7816">
+															<a href="#practice"><span>REGISTRATION OF ASSIGNMENT AGREEMENT
+																</span></a>
+														</li>
+													</ul>
+												</div>
+											</li>
+											<li id="menu-item-8026"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8026">
+												<a href="#map"><span>Map</span></a>
+											</li>
+											<li id="menu-item-7814"
+												class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7814">
+												<a><span>Follow</span></a>
+												<div class='sub-menu-wrapper'>
+													<ul class="sub-menu">
+														<li id="menu-item-7728"
+															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7728">
+															<a
+																href="https://www.linkedin.com/in/aman-kaushik-7b4b15211"><span>Linkedin</span></a>
+														</li>
+													</ul>
+												</div>
+											</li>
+											<li id="menu-item-7785"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7785">
+												<a href="#contact"><span>Contacts</span></a>
+											</li>
+										</ul>
+									</div>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		</div>
+		<div class="shadow-bottom"></div>
+		<div class="boxed-layout">
+			<div class="pane-wrapper clearfix">
+				<header class="header-middle row normal type-slider" style="">
+					<div id="header-slider-container" class="revslider">
+						<div class="header-slider-wrapper">
+							<p class="rs-p-wp-fix"></p>
+							<rs-module-wrap id="rev_slider_17_1_wrapper" data-source="gallery"
+								style="background:#4A4F55;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;max-width:;">
+								<rs-module id="rev_slider_17_1" style="" data-version="6.3.1">
+									<rs-slides>
+										<rs-slide data-key="rs-56" data-title="Slide1"
+											data-thumb="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-1-100x50.jpg"
+											data-anim="ei:d;eo:d;s:1000;r:0;t:slotzoom-horizontal;sl:7;">
+											<img src="./wp-content/plugins/revslider/public/assets/assets/dummy.png"
+												title="Home &#8211; Single lawyer"
+												data-lazyload="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-1.jpg"
+												data-bg="p:left bottom;" data-panzoom="d:15000;ss:100;se:120;"
+												class="rev-slidebg" data-no-retina="">
+											<rs-layer id="slider-17-slide-56-layer-1" class="A_BigTitle_Blue"
+												data-type="image" data-rsp_ch="on" data-xy="x:r;xo:0,0,-110px,-105px;"
+												data-text="s:85;l:85;"
+												data-dim="w:840px,840px,840px,733px;h:573px,573px,573px,500px;"
+												data-frame_0="sX:5;sY:5;tp:600;"
+												data-frame_1="tp:600;st:500;sp:1200;sR:500;"
+												data-frame_999="st:w;sR:7300;auto:true;"
+												style="z-index:5;font-style:italic;">
+												<img src="./wp-content/plugins/revslider/public/assets/assets/dummy.png"
+													width="840" height="573" data-lazyload="./assets/Slider-bg-man.webp"
+													data-no-retina="">
+											</rs-layer>
+											<rs-layer id="slider-17-slide-56-layer-2" class="A_Gold_Title"
+												data-type="text" data-color="rgba(204, 168, 118, 1)" data-rsp_ch="on"
+												data-xy="xo:30px;y:b;yo:450px,450px,250px,260px;" data-text="s:50;l:55;"
+												data-frame_0="o:1;tp:600;" data-frame_0_chars="d:10;sX:0;sY:0;o:0;"
+												data-frame_1="tp:600;st:1000;sp:1000;sR:1000;"
+												data-frame_1_chars="d:10;"
+												data-frame_999="st:w;sp:1000;sR:6300;auto:true;"
+												style="z-index:6;font-family:Libre Baskerville;">Bonjour!
+											</rs-layer>
+											<rs-layer id="slider-17-slide-56-layer-3" class="A_White_Title_Bold"
+												data-type="text" data-color="rgba(255, 255, 255, 1)" data-rsp_ch="on"
+												data-xy="xo:30px;y:b;yo:330px,330px,130px,140px;"
+												data-text="w:normal;s:50,50,50,40;l:55;fw:700;"
+												data-dim="w:500px,500px,500px,431px;" data-frame_0="y:50px;tp:600;"
+												data-frame_1="tp:600;st:1700;sp:1700;sR:1700;"
+												data-frame_999="st:w;sp:1000;sR:5600;auto:true;"
+												style="z-index:7;font-family:Libre Baskerville;">EVERY CLIENT MATTERS.
+											</rs-layer>
+											<rs-layer id="slider-17-slide-56-layer-4" data-type="text"
+												data-color="rgba(255, 255, 255, 1)"
+												data-xy="xo:30px,30px,30px,25px;y:b;yo:270px,270px,70px,65px;"
+												data-text="l:22;" data-dim="h:50px;" data-rsp_o="off" data-rsp_bd="off"
+												data-frame_0="sX:0.75;sY:0.75;tp:600;"
+												data-frame_1="tp:600;st:2100;sp:1500;sR:2100;"
+												data-frame_999="st:w;sp:800;sR:5400;auto:true;"
+												style="z-index:8;font-family:Roboto;"><a href="#contact" target="_self"
+													style='font-size: 14px;'
+													class="button vamtam-button accent1  button-border-slanted hover-accent1  alignleft"><span
+														class="btext">CONTACT NOW →</span></a>
+											</rs-layer>
+										</rs-slide>
+										<!--<rs-slide data-key="rs-57" data-title="Slide2"
+											data-thumb="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-4-100x50.jpg"
+											data-anim="ei:d;eo:d;s:600,600;r:,0;t:parallaxtotop,zoomin;sl:7,7;">
+											<img src="./wp-content/plugins/revslider/public/assets/assets/dummy.png"
+												title="Home &#8211; Single lawyer"
+												data-lazyload="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-4.jpg"
+												data-bg="p:center top;" class="rev-slidebg" data-no-retina="">
+											<rs-layer id="slider-17-slide-57-layer-1" data-type="image" data-rsp_ch="on"
+												data-xy="xo:60px,60px,-50px,-111px;y:b;yo:-1px,-1px,-85px,-80px;"
+												data-text="l:22;"
+												data-dim="w:['199','199','199','199'];h:['584','584','584','584'];"
+												data-frame_0="y:50px;tp:600;"
+												data-frame_1="tp:600;e:Cubic.easeInOut;st:2100;sp:800;sR:2100;"
+												data-frame_999="st:w;sR:6100;auto:true;" style="z-index:5;"><img
+													src="./wp-content/plugins/revslider/public/assets/assets/dummy.png"
+													width="199" height="584"
+													data-lazyload="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-phone.png"
+													data-no-retina="">
+											</rs-layer>
+											<rs-layer id="slider-17-slide-57-layer-2" class="A_BigTitle_Blue"
+												data-type="image" data-rsp_ch="on"
+												data-xy="x:r;xo:49px,49px,-81px,-189px;y:b;yo:130px,130px,0,0;"
+												data-text="s:85;l:85;"
+												data-dim="w:['493px','493px','493px','493px'];h:['500px','500px','500px','500px'];"
+												data-frame_0="x:50;y:150;sX:0.5;sY:0.5;tp:600;"
+												data-frame_1="tp:600;e:Cubic.easeInOut;st:500;sp:1600;sR:500;"
+												data-frame_999="st:w;sR:6900;auto:true;"
+												style="z-index:6;font-style:italic;"><img
+													src="./wp-content/plugins/revslider/public/assets/assets/dummy.png"
+													width="612" height="621"
+													data-lazyload="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-woman.png"
+													data-no-retina="">
+											</rs-layer>
+											<rs-layer id="slider-17-slide-57-layer-3" class="A_Darck_Title"
+												data-type="text" data-color="#000000" data-rsp_ch="on"
+												data-xy="xo:290px,290px,180px,120px;y:b;yo:340px,340px,240px,330px;"
+												data-text="s:50;l:55;" data-frame_0="o:1;tp:600;"
+												data-frame_0_chars="d:10;sX:0;sY:0;o:0;"
+												data-frame_1="tp:600;st:1000;sp:1000;sR:1000;"
+												data-frame_1_chars="d:10;"
+												data-frame_999="st:w;sp:1000;sR:6500;auto:true;"
+												style="z-index:7;font-family:Libre Baskerville;">Hi, I'm
+											</rs-layer>
+											<rs-layer id="slider-17-slide-57-layer-4" class="A_White_Title_Bold"
+												data-type="text" data-color="rgba(255, 255, 255, 1)" data-rsp_ch="on"
+												data-xy="xo:289px,289px,179px,120px;y:b;yo:220px,220px,110px,103px;"
+												data-text="w:normal;s:50;l:55;fw:700;"
+												data-dim="w:501px,501px,540px,310px;" data-frame_0="y:50px;tp:600;"
+												data-frame_1="tp:600;st:1700;sp:1700;sR:1700;"
+												data-frame_999="st:w;sp:1000;sR:5600;auto:true;"
+												style="z-index:8;font-family:Libre Baskerville;">EXPERT IN
+												TECH PATENT LAW.
+											</rs-layer>
+											<rs-layer id="slider-17-slide-57-layer-7" class="rev-btn" data-type="button"
+												data-color="#000000"
+												data-xy="x:r,r,l,l;xo:15px,15px,180px,120px;y:b;yo:230px,230px,50px,52px;"
+												data-text="s:14;l:14;fw:500;a:inherit;"
+												data-actions='o:click;a:simplelink;target:_self;url:#REQUESTFORM;'
+												data-rsp_bd="off" data-padding="t:10;r:30;b:10;l:30;"
+												data-frame_0="tp:600;" data-frame_1="tp:600;st:2310;sp:1000;sR:2310;"
+												data-frame_999="o:0;tp:600;st:w;sR:5690;"
+												data-frame_hover="c:#fff;bgc:#cca876;boc:#000;bor:0px,0px,0px,0px;bos:solid;oX:50;oY:50;sp:0;"
+												style="z-index:9;background-color:#ffffff;font-family:Roboto;cursor:pointer;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
+												More
+											</rs-layer>
+										</rs-slide>
+										<rs-slide data-key="rs-58" data-title="Slide3"
+											data-thumb="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-3-100x50.jpg"
+											data-anim="ei:d;eo:d;s:600;t:random-static;sl:7;">
+											<img src="./wp-content/plugins/revslider/public/assets/assets/dummy.png"
+												title="Home &#8211; Single lawyer"
+												data-lazyload="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-3.jpg"
+												data-bg="p:center top;" class="rev-slidebg" data-no-retina="">
+											<rs-layer id="slider-17-slide-58-layer-1" class="A_White_Title_Montserrat"
+												data-type="text" data-color="rgba(255, 255, 255, 1)" data-rsp_ch="on"
+												data-xy="x:c;y:b;yo:340px,340px,240px,235px;"
+												data-text="s:44;l:46;fw:800;" data-frame_0="o:1;tp:600;"
+												data-frame_0_chars="d:10;sX:0;sY:0;o:0;"
+												data-frame_1="tp:600;st:1000;sp:1000;sR:1000;"
+												data-frame_1_chars="d:10;"
+												data-frame_999="st:w;sp:1000;sR:6700;auto:true;"
+												style="z-index:5;font-family:Montserrat;">I'M:
+											</rs-layer>
+											<rs-layer id="slider-17-slide-58-layer-2" class="A_White_Title_Bold"
+												data-type="text" data-color="rgba(255, 255, 255, 1)" data-rsp_ch="on"
+												data-xy="x:c;y:b;yo:270px,270px,175px,175px;"
+												data-text="w:nowrap,nowrap,nowrap,normal;s:50,50,50,40;l:55;fw:700;a:left,left,left,center;"
+												data-dim="w:auto,auto,auto,430px;" data-frame_0="o:1;tp:600;"
+												data-frame_0_words="d:10;y:50px;o:0;"
+												data-frame_1="tp:600;st:1700;sp:1500;sR:1700;"
+												data-frame_1_words="d:10;"
+												data-frame_999="st:w;sp:1000;sR:5600;auto:true;"
+												style="z-index:6;font-family:Libre Baskerville;">Robert H. Schuller
+											</rs-layer>
+										</rs-slide>
+										<rs-slide data-key="rs-59" data-title="Slide4"
+											data-thumb="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-2-100x50.jpg"
+											data-anim="ei:d;eo:d;s:1200;t:papercut;sl:7;">
+											<img src="./wp-content/plugins/revslider/public/assets/assets/dummy.png"
+												title="Home &#8211; Single lawyer"
+												data-lazyload="//lawyers-attorneys.vamtam.com/wp-content/uploads/2014/09/Slider-bg-2.jpg"
+												data-bg="p:center top;" class="rev-slidebg" data-no-retina="">
+											<rs-layer id="slider-17-slide-59-layer-1" class="A_Gold_Title_Montserrat"
+												data-type="text" data-color="rgba(204, 168, 118, 1)" data-rsp_ch="on"
+												data-xy="x:r,r,r,c;xo:125px,125px,125px,0;y:b;yo:320px,320px,320px,270px;"
+												data-text="s:40;l:46;fw:700;" data-frame_0="o:1;tp:600;"
+												data-frame_0_chars="d:10;sX:0;sY:0;o:0;"
+												data-frame_1="tp:600;st:600;sp:1000;sR:600;" data-frame_1_chars="d:10;"
+												data-frame_999="st:w;sp:1000;sR:6800;auto:true;"
+												style="z-index:5;font-family:Montserrat;">CALL US:
+											</rs-layer>
+											<rs-layer id="slider-17-slide-59-layer-2" class="A_White_Title_Bold"
+												data-type="text" data-color="rgba(255, 255, 255, 1)" data-rsp_ch="on"
+												data-xy="x:r,r,r,c;xo:45px,45px,45px,0;y:b;yo:250px,250px,250px,220px;"
+												data-text="s:50;l:55;fw:700;" data-frame_0="y:50px;tp:600;"
+												data-frame_1="tp:600;st:1000;sp:1200;sR:1000;"
+												data-frame_999="st:w;sp:1000;sR:6800;auto:true;"
+												style="z-index:6;font-family:Libre Baskerville;">715.387.5006
+											</rs-layer>
+											<rs-layer id="slider-17-slide-59-layer-3" class="A_NormalText"
+												data-type="text" data-color="rgba(74, 74, 74, 1)" data-rsp_ch="on"
+												data-xy="x:r,r,r,c;xo:190px,190px,190px,0;y:b;yo:210px,210px,210px,180px;"
+												data-text="s:14;l:16;" data-frame_0="sX:0;sY:0;tp:600;"
+												data-frame_1="tp:600;e:elastic.inOut;st:1000;sp:2300;sR:1000;"
+												data-frame_999="st:w;sR:5700;auto:true;"
+												style="z-index:7;font-family:Roboto;text-align:center;">– OR –
+											</rs-layer>
+											<rs-layer id="slider-17-slide-59-layer-4" data-type="text"
+												data-color="rgba(255, 255, 255, 1)"
+												data-xy="x:r,r,r,c;xo:51px,51px,51px,0;y:b;yo:140px,140px,140px,100px;"
+												data-text="l:22,22,22,16;" data-dim="h:50px,50px,50px,30px;"
+												data-rsp_o="off" data-rsp_bd="off"
+												data-frame_0="y:200;sX:0.5;sY:0.5;tp:600;"
+												data-frame_1="tp:600;st:1100;sp:2200;sR:1100;"
+												data-frame_999="st:w;sR:5700;auto:true;" style="z-index:8;"><a
+													href="#REQUESTFORM" target="_self" style='font-size: 14px;'
+													class="button vamtam-button accent1  button-border-slanted hover-accent1  alignleft"><span
+														class="btext">REQUEST A FREE CONSULTATION →</span></a>
+											</rs-layer>
+										</rs-slide>-->
+									</rs-slides>
+								</rs-module>
+								<script>
+									var htmlDivCss = unescape("%0A%0A%0A%0A");
+									var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+									if (htmlDiv) {
+										htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+									} else {
+										var htmlDiv = document.createElement('div');
+										htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+										document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+									}
+								</script>
+							</rs-module-wrap>
+
+						</div>
+					</div>
+				</header>
+				<div id="main-content">
+
+					<div id="main" role="main" class="wpv-main layout-full">
+						<div class="limit-wrapper">
+							<div class="row page-wrapper">
+								<article id="post-9404" class="full post-9404 page type-page status-publish hentry">
+									<div class="page-content">
+										<div class="row ">
+											<div class="wpv-grid grid-1-1 move-into-slider-2 wpv-first-level first unextended"
+												style="padding-top:0px;padding-bottom:0px"
+												id="wpv-column-24835eeb94b957cc7540ad248c32b8d0">
+												<div class="row ">
+													<div class="wpv-grid grid-1-3  first unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-39845649f471fa513602b58a7e9a38de">
+														<div class="services has-more "
+															id="wpv-expandable-d041c047857a0128a69a25692ec7f712">
+															<div class="closed services-inside">
+																<div class="services-content-wrapper clearfix">
+																	<div class="push" style='margin-bottom:-60px'></div>
+																	<p style="text-align: center;"><span
+																			class='icon shortcode theme inverted-colors use-hover'
+																			style='font-size:30px !important;color:#fff;background:#cca876;'>&#57559;</span>
+																	<h3 style="text-align: center;"><span
+																			class="accent-2">My client list is small
+																			for<br>
+																			individual attention</span></h3>
+																	<p style="text-align: center;"><span
+																			class="accent-1">TRUSTED CLIENTS</span></p>
+																</div>
+															</div>
+															<div class="open services-inside">
+																<div class="services-content-wrapper">
+																	<div class="row">
+																		<div class="push" style='height:15px'></div>
+																		<p class="textcenter"><a href="#team" target="_self"
+																				style='font-size: 13px;'
+																				class="button vamtam-button accent1  button-border hover-accent1 "><span
+																					class="btext">VIEW TEAM
+																					→</span></a></p>
+																		<div class="push" style='height:15px'></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<style scoped="">
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed {
+																background-color: #fff;
+															}
+
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed p,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed .sep-text h2.regular-title-wrapper,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed .text-divider-double,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed .sep-text .sep-text-line,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed .sep,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed .sep-2,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed .sep-3,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed h1,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed h2,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed h3,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed h4,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed h5,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed h6,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed td,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed th,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .closed caption {
+																color: #808080;
+															}
+
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open {
+																background: #4a4f55;
+															}
+
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open p,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open .sep-text h2.regular-title-wrapper,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open .text-divider-double,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open .sep-text .sep-text-line,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open .sep,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open .sep-2,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open .sep-3,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open h1,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open h2,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open h3,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open h4,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open h5,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open h6,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open td,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open th,
+															#wpv-expandable-d041c047857a0128a69a25692ec7f712 .open caption {
+																color: #cccfd2;
+															}
+														</style>
+													</div>
+													<div class="wpv-grid grid-1-3  unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-16d64a50ccef5cfd57f4efb7aa91f42c">
+														<div class="services has-more "
+															id="wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606">
+															<div class="closed services-inside">
+																<div class="services-content-wrapper clearfix">
+																	<div class="push" style='margin-bottom:-60px'></div>
+																	<p style="text-align: center;"><span
+																			class='icon shortcode theme inverted-colors use-hover'
+																			style='font-size:30px !important;color:#fff;background:#cca876;'>&#57408;</span>
+																	<h3 style="text-align: center;"><span
+																			class="accent-2">Winning results<br>
+																			in different cases.</span></h3>
+																	<p style="text-align: center;"><span
+																			class="accent-1">TRUSTED CLIENTS</span></p>
+																</div>
+															</div>
+															<div class="open services-inside">
+																<div class="services-content-wrapper">
+																	<div class="row">
+																		<div class="push" style='height:15px'></div>
+																		<p class="textcenter"><a href="#practice" target="_self"
+																				style='font-size: 13px;'
+																				class="button vamtam-button accent1  button-border hover-accent1 "><span
+																					class="btext">VIEW PRACTICE AREA
+																					→</span></a></p>
+																		<div class="push" style='height:15px'></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<style scoped="">
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed {
+																background-color: #fff;
+															}
+
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed p,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed .sep-text h2.regular-title-wrapper,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed .text-divider-double,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed .sep-text .sep-text-line,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed .sep,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed .sep-2,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed .sep-3,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed h1,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed h2,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed h3,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed h4,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed h5,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed h6,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed td,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed th,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .closed caption {
+																color: #808080;
+															}
+
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open {
+																background: #4a4f55;
+															}
+
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open p,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open .sep-text h2.regular-title-wrapper,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open .text-divider-double,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open .sep-text .sep-text-line,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open .sep,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open .sep-2,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open .sep-3,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open h1,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open h2,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open h3,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open h4,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open h5,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open h6,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open td,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open th,
+															#wpv-expandable-01eb04a9c258680b8d8cfbfa22e21606 .open caption {
+																color: #cccfd2;
+															}
+														</style>
+													</div>
+													<div class="wpv-grid grid-1-3  unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-315c6d45c39328f90470d8d2019245b5">
+														<div class="services has-more "
+															id="wpv-expandable-891e823dbfa7f7a126549435af89684b">
+															<div class="closed services-inside">
+																<div class="services-content-wrapper clearfix">
+																	<div class="push" style='margin-bottom:-60px'></div>
+																	<p style="text-align: center;"><span
+																			class='icon shortcode theme inverted-colors use-hover'
+																			style='font-size:30px !important;color:#fff;background:#cca876;'>&#57422;</span>
+																	<h3 style="text-align: center;"><span
+																			class="accent-2">At my practice you are a
+																			name,<br>
+																			not a number!</span></h3>
+																	<p style="text-align: center;"><span
+																			class="accent-1">TRUSTED CLIENTS</span></p>
+																</div>
+															</div>
+															<div class="open services-inside">
+																<div class="services-content-wrapper">
+																	<div class="row">
+																		<div class="push" style='height:15px'></div>
+																		<p class="textcenter"><a href="#contact" target="_self"
+																				style='font-size: 13px;'
+																				class="button vamtam-button accent1  button-border hover-accent1 "><span
+																					class="btext">CONTACT ME
+																					→</span></a></p>
+																		<div class="push" style='height:15px'></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<style scoped="">
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed {
+																background-color: #fff;
+															}
+
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed p,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed .sep-text h2.regular-title-wrapper,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed .text-divider-double,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed .sep-text .sep-text-line,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed .sep,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed .sep-2,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed .sep-3,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed h1,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed h2,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed h3,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed h4,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed h5,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed h6,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed td,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed th,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .closed caption {
+																color: #808080;
+															}
+
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open {
+																background: #4a4f55;
+															}
+
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open p,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open .sep-text h2.regular-title-wrapper,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open .text-divider-double,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open .sep-text .sep-text-line,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open .sep,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open .sep-2,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open .sep-3,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open h1,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open h2,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open h3,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open h4,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open h5,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open h6,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open td,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open th,
+															#wpv-expandable-891e823dbfa7f7a126549435af89684b .open caption {
+																color: #cccfd2;
+															}
+														</style>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="push" style='height:70px'></div>
+										<div class="row" style="background-color: rgb(222, 229, 213);">
+											<img src="./assets/WhatsApp Image 2021-06-14 at 12.39.13 PM.jpeg" alt="">
+										</div>
+										<div class="push" style='height:70px'></div>
+										<div class="row ">
+											<div class="wpv-grid grid-1-2  wpv-first-level first has-background unextended"
+												style="background: url( './wp-content/uploads/2014/09/photo-2.jpg' ) no-repeat center top;background-size: auto;padding-top:390px;padding-bottom:0px"
+												id="wpv-column-1b4e4d633307eb317b41d1e5f4dcde81">
+												<div class="row ">
+													<div class="wpv-grid grid-1-1  first unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-1624d16644479be05f1aae5e5f92eaa8">
+														<div class="push" style='height:15px'></div>
+														<h4><span class="accent-1">OUR PHILOSOPHY:</span></h4>
+														<h2>“I WILL FIGHT TO PROTECT YOUR LEGAL RIGHTS UNDER THE LAW.”
+														</h2>
+													</div>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-2  wpv-first-level unextended"
+												style="padding-top:0px;padding-bottom:0px"
+												id="wpv-column-5cbfb7ce3d556842ac2d2173c4f00c54">
+												<p><img loading="lazy" class="alignnone size-full wp-image-9408"
+														src="./wp-content/uploads/2014/09/photo-3.jpg" alt="photo-3"
+														width="290" height="140"
+														srcset="./wp-content/uploads/2014/09/photo-3.jpg 290w, ./wp-content/uploads/2014/09/photo-3-262x126.jpg 262w"
+														sizes="(max-width: 290px) 100vw, 290px"></p>
+												<h3>We have highly qualified professional team to serve you at the best!</h3>
+												<p>The LLP has a full-scale group law firm, AY & Associates which provides a spectrum of
+													legal services to its clients in a qualitative manner and is well known for its expertise in
+													Corporate Laws – Advisory and Litigation, Civil, Criminal, DRT, DRAT, NCLT matters,
+													Commercial Compliance, Infrastructure development Business contracts, Joint Ventures,
+													Shareholders’ Agreement, Arbitration/ Settlement, Service Matters and Consumer
+													Matters etc. </p>
+													<p>Based in New Delhi, the Law office has a PAN India presence through its
+													associates. We also provide services for resolving NPAs/Bad Debt Management of
+													Banks, HFCs, NBFCs, FIs & ARCs through various structures currently available i.e.,
+													within the legal framework of the Recovery of Debt Due to Bank & Financial Institutions
+													(RDDBFI) Act, 1993; Negotiable Instruments Act, 1881; Indian Penal Code, 1860;
+													Arbitration & Conciliation Act,1996; Securitization & Reconstruction of Financial Assets
+													and Enforcement of Security Interest (SARFAESI) Act, 2002; Insolvency & Bankruptcy
+													Code of India, 2016 for effective and speedy resolution of Non-Performing assets through
+													the various available means and services.</p>
+											</div>
+											<!--
+											<div class="wpv-grid grid-1-3  wpv-first-level unextended"
+												style="padding-top:0px;padding-bottom:0px"
+												id="wpv-column-eca9d7f9624aca3023c7ad591a5b0f46">
+												<p><img loading="lazy" class="alignnone size-full wp-image-9409"
+														src="./wp-content/uploads/2014/09/photo-4.jpg" alt="photo-4"
+														width="290" height="140"
+														srcset="./wp-content/uploads/2014/09/photo-4.jpg 290w, ./wp-content/uploads/2014/09/photo-4-262x126.jpg 262w"
+														sizes="(max-width: 290px) 100vw, 290px"></p>
+												<h3>University&#8217;s like this little world, a bubble of time separate
+													from everything before and everything after.</h3>
+												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+													nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+													volutpat.<br>
+													Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+													suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+												<p><a href="#"><span class="vamtam-font-style-2">Serious car crash →
+														</span></a><br>
+													<a href="#"><span class="vamtam-font-style-2">Brain injury →
+														</span></a><br>
+													<a href="#"><span class="vamtam-font-style-2">Truck accidents →
+														</span></a><br>
+													<a href="#"><span class="vamtam-font-style-2">Semi-truck collision →
+														</span></a><br>
+													<a href="#"><span class="vamtam-font-style-2">Motorcycle accidents →
+														</span></a><br>
+													<a href="#"><span class="vamtam-font-style-2">Wrongful Death →
+														</span></a>
+												</p>
+											</div>-->
+										</div>
+										<!--<div class="sep"></div>
+										<div class="section-block-parallax" style="background-image: url('https://www.npaconsultant.in//assets/front/img/bg/bg14.jpg');">
+											<div class="container">
+												<div class="section-heading center-holder white-color">
+													<span style="font-size: 20px;">Take Your <span style="font-size: 30px;">1<sup>st</sup></span> Positive Step With Us!</span>
+													<h3>One Stop Solution For All Your</h3>
+													<h2><strong>NPA Problems</strong></h2>
+													<a href="https://www.npaconsultant.in/ads/" target="_blank" class="position-relative dark-button button-md mt-10" style="color: #fff;">Become a Client</a>
+												</div>
+											</div>
+										</div>-->
+										<div class="sep"></div>
+										<h2 class="text-divider-double">
+											ABOUT US<br>
+										</h2>
+										<div id="about" class="row">
+											<div class="wpv-grid grid-1-2">
+												<div class="push" style='height:50px'></div>
+												<div class="text-content-big mt-20">
+													<p>
+														AYLEGUM Advisory LLP was incorporated in the year 2019 as a
+														multi-vertical
+														consultancy firm providing a complete range of solutions for NPA
+														Management.
+														AYLEGUM’s objective is to redefine excellence in the areas of
+														its operation, through
+														practicing ethical business principles and transparent work
+														ethos.
+														We provide integrated services for NPA Management encompassing
+														the range of
+														services listed below, through a professional team of highly
+														qualified professionals-
+														ExBureaucrats, Ex-NBFC`s, Chartered Accountants, Company
+														Secretaries, Lawyers etc.
+													</p>
+												</div>
+												<div class="section-heading">
+													<h3 class="text-divider-double">
+														Board of Advisors<br>
+													</h3>
+													<div class="section-heading-line-left"></div>
+												</div>
+												<div class="text-content-big mt-20">
+													<p>
+														AYLEGUM Advisory LLP, Board of Advisors is headed by Mr.
+														Dharmender Arya
+														Senior Lawyer, Supreme Court and Vice-Chairperson Mr. Harshit
+														Agarwal. Board of
+														Advisors provides us the valuable guidance from time to time on
+														matters relating to
+														macro Business planning, policy formulation and developing
+														organizational ethos.
+													</p>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-2">
+												<div class="section-heading">
+													<h3 class="text-divider-double">
+														Services<br>
+													</h3>
+												</div>
+
+												<div class="accordion accordion-flush" id="accordionFlushExample">
+													<div class="accordion-item">
+														<h2 class="accordion-header" id="flush-headingOne">
+															<button class="accordion-button collapsed" type="button"
+																data-bs-toggle="collapse"
+																data-bs-target="#flush-collapseOne"
+																aria-expanded="false" aria-controls="flush-collapseOne">
+																Enforcement and Recovery Services
+															</button>
+														</h2>
+														<div id="flush-collapseOne" class="accordion-collapse collapse"
+															aria-labelledby="flush-headingOne"
+															data-bs-parent="#accordionFlushExample">
+															<div class="accordion-body">
+																<ul style="list-style: none;">
+																	<li>➢ Recovery in NPA Accounts under SARFAESI Act.
+																	</li>
+																	<li>➢ Taking Physical possession of property under
+																		SARFAESI Act.</li>
+																	<li>➢ Recovery in write-off accounts.</li>
+																	<li>➢ Assets' Disposal.</li>
+																	<li>➢ Strategic Asset Sale</li>
+																	<li>➢ Corporate Debt Restructuring</li>
+																	<li>➢ One Time Settlement Strategizing</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="accordion-item">
+														<h2 class="accordion-header" id="flush-headingTwo">
+															<button class="accordion-button collapsed" type="button"
+																data-bs-toggle="collapse"
+																data-bs-target="#flush-collapseTwo"
+																aria-expanded="false" aria-controls="flush-collapseTwo">
+																Due Diligence
+															</button>
+														</h2>
+														<div id="flush-collapseTwo" class="accordion-collapse collapse"
+															aria-labelledby="flush-headingTwo"
+															data-bs-parent="#accordionFlushExample">
+															<div class="accordion-body">
+																<ul style="list-style: none;">
+																	<li>➢ Background checks of borrowers</li>
+																	<li>➢ Documentation for Hypothecation of vehicle
+																	</li>
+																	<li>➢ Credit-worthiness checks</li>
+																	<li>➢ Title check Reports</li>
+																	<li>➢ Acquisition Support for immovable properties
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="accordion-item">
+														<h2 class="accordion-header" id="flush-headingThree">
+															<button class="accordion-button collapsed" type="button"
+																data-bs-toggle="collapse"
+																data-bs-target="#flush-collapseThree"
+																aria-expanded="false"
+																aria-controls="flush-collapseThree">
+																Verification and Investigation Services
+															</button>
+														</h2>
+														<div id="flush-collapseThree"
+															class="accordion-collapse collapse"
+															aria-labelledby="flush-headingThree"
+															data-bs-parent="#accordionFlushExample">
+															<div class="accordion-body">
+																<ul style="list-style: none;">
+																	<li>➢ Document verification</li>
+																	<li>➢ Physical verification of Assets</li>
+																	<li>➢ Skip Tracing</li>
+																	<li>➢ Decree Execution</li>
+																	<li>➢ Assets Tracing & verification of assets</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="accordion-item">
+														<h2 class="accordion-header" id="flush-headingFour">
+															<button class="accordion-button collapsed" type="button"
+																data-bs-toggle="collapse"
+																data-bs-target="#flush-collapseFour"
+																aria-expanded="false"
+																aria-controls="flush-collapseFour">
+																Fraud & Embezzlements
+															</button>
+														</h2>
+														<div id="flush-collapseFour" class="accordion-collapse collapse"
+															aria-labelledby="flush-headingFour"
+															data-bs-parent="#accordionFlushExample">
+															<div class="accordion-body">
+																<ul style="list-style: none;">
+																	<li>➢ Financial embezzlement (Detection &
+																		Prevention)</li>
+																	<li>➢ Conflict of interest check with partners &
+																		collaborators</li>
+																	<li>➢ Prosecution support with Law Enforcement
+																		Agencies</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="sep"></div>
+										<h2 class="text-divider-double">
+											BOARD OF ADVISORS<br>
+										</h2>
+										<div class="push" style='height:40px'></div>
+										<div id="board" class="row ">
+											<div class="wpv-grid grid-1-2 ">
+												<h4><strong style="font-size: 120%;">Mr. DHARMENDER ARYA</strong></h4>
+												<p><em>Senior Lawyer, Advocate on Record, Supreme Court of India,
+														(Vice-Chairman, Board of Advisors)</em></p>
+												<div class="extended-column-inner">
+													<p>
+														Mr. Arya is a law graduate from Campus Law Centre, University of
+														Delhi and
+														has over 27 years of experience in Criminal, Civil, Matrimonial,
+														Trademark &
+														Corporate legal cases. He is associated with 2-3 News Channels
+														as a Legal
+														Advisor. Additionally, he has the expertise of handling
+														litigation in other
+														judicial fora, such as the Hon'ble Supreme Court, various High
+														Courts, DRT,
+														DRAT& NCLT.
+													</p>
+												</div>
+
+											</div>
+											<div class="wpv-grid grid-1-2 ">
+												<h4><strong style="font-size: 120%;">Mr. HARSHIT AGARWAL</strong></h4>
+												<p><em>DU, LLB, Panel Advocate for PNB, (Chairman, Board of
+														Advisors)</em></p>
+												<div class="extended-column-inner">
+													<p>
+														Mr. Harshit holds a Bachelor’s Degree in Law from Campus Law
+														Centre,
+														University of Delhi and Bachelor Degree in Commerce B.Com.
+														(Pass) from
+														University of Delhi. He has been advising several private
+														companies, corporates
+														MSMEs, firms, professionals, individuals operating in different
+														fields to name
+														few Blue Star Ltd., Deepali Designs & Exhibits Pvt. Ltd.,
+														Formula One
+														Corporate Solutions Pvt. Ltd., Deepali Underroot LLP, Stella
+														Moda Fab LLP,
+														Jainam Textiles and Rebel Fashion Studio LLP etc.<br>
+														He is on the panel of Delhi Development Authority, Punjab
+														National Bank,
+														Indian Railway Catering and Tourism Corporation & National
+														Buildings
+														Construction Corporation Limited.
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="sep"></div>
+										<h2 class="text-divider-double">
+											TEAM MEMBERS<br>
+										</h2>
+										<div class="push" style='height:40px'></div>
+										<div id="team" class="row ">
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Ms. Shuchita Kocchar</strong></h4>
+												<p><em>B. Arch, M.B.A Symbiosis</em></p>
+												<div class="extended-column-inner">
+													<p>
+														Ms. Kocchar is an Architect/Engineer by Qualification and an
+														Ex,-Officer of Indian
+														Navy, having experience of managing administration & team as
+														Short Service
+														Commission officer. Additionally, educated in New Zealand and
+														has built on this
+														foundation to specialize in operations in Engineering &
+														Construction Business and
+														Education Industry.<br>
+														She brings a diverse experience of operations of two decades and
+														currently leads
+														Delhi -NCR Zone/ West Zone/ Punjab/ Haryana and Rajasthan for a
+														leading Recovery
+														Agency as CEO
+													</p>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Balakrishna Pathak</strong></h4>
+												<p><em></em></p>
+												<div class="extended-column-inner">
+													<p>
+
+														Balakrishna has got experience of around 15years in Capital
+														markets and handing
+														PSU’s and Private Banks, DCCB’s, RRB’s and corporate clients in
+														private sectors in
+														Telangana, Andhra Pradesh and Maharashtra. He started with a
+														small firm AAMAL
+														Securities dealing in PSU bonds Sale to Retirement Trusts in
+														Unified Andhra Pradesh
+														in 2004 and thereafter worked with Centrum Capital Ltd. Mr.
+														Pathak has got extensive network
+														across India consisting of various bankers, CA’s, CS’s, Bond
+														Market dealers,
+														Corporate Advisors, Promoters and Directors of Various
+														companies.
+													</p>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Mr. Aman Kaushik</strong></h4>
+												<p><em>B.A (Eng) (Hons), LLB</em></p>
+												<div class="extended-column-inner">
+													<p>
+
+														Mr. Kaushik is legally qualified with LL.B. (Amity University)
+														and B.A in English
+														Hons (Delhi University) with good experience in developmental
+														management,
+														banking law consultancy. He possesses vast experience in taking
+														every action under
+														SARFESI Act as he has worked with banks and HFC`s i.e. Punjab
+														national bank all
+														three circle Delhi, Andhra, OBC, Karnataka Bank, CBHFL, DHFL,
+														BOB and he
+														heads the executive team of the organization, operational in 4
+														states/ UTs in Northern
+														India
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Kiran Koppula</strong></h4>
+												<p><em>
+														MBA (Symbiosis)</em></p>
+												<div class="extended-column-inner">
+													<p>
+														Post Graduate from Symbiosis with over 19 years of experience in
+														organizations like
+														Arthur Andersen, Ernst & Young and Crisil before starting a
+														Management consulting
+														firm in 2006 with offices in Mumbai, Delhi and Hyderabad.
+
+													</p>
+												</div>
+											</div>
+
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Ms. Usha Rani</strong></h4>
+												<p><em>LLB (Hons)</em></p>
+												<div class="extended-column-inner">
+													<p>
+														Ms. Usha Rani is legally qualified with LL.B. is having 5 years’
+														experience in dealing
+														with Civil and Criminal Law and matters under SARFAESI & RDDBFI
+														Act. She
+														regularly handles matters in DRT, DRAT, relating to Banking Law.
+														She heads the
+														Business Promotion team of the organization, operational in 4
+														states/ UTs in Northern
+														India.
+													</p>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Mr. Kundan Bhist</strong></h4>
+												<p><em>FCA, FCS</em></p>
+												<div class="extended-column-inner">
+													<p>
+
+														Mr. Kundan Bhist, Chartered Accountant is having 15 Years’ vast
+														experience in the
+														field of audit where he has performed assignments of Internal
+														Audit, Preparation of
+														Audit Manuals, Network Security, IS Audit etc. Risk Assessment,
+														Data Analytics,
+														Fraud Investigation & Forensic Analysis, SAP Audits etc. are his
+														forte. Besides with
+														accounting Services, Statutory Audits, Internal Audits, Forensic
+														Audit, Transfer
+														Pricing Certification, Certifications as per IRDA Guidelines,
+														RBI Compliances and
+														Company Law Matters.
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Mr. Mannu Chandila</strong></h4>
+												<p><em>Advocate</em></p>
+												<div class="extended-column-inner">
+													<p>
+														Mr.Mannu Chandila having good experience in dealing with Civil
+														and Criminal Law
+														and matters under SARFAESI & RDDBFI Act.
+													</p>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Mr. Amit Kathuria, </strong></h4>
+												<p><em>Associate Company Secretary</em></p>
+												<div class="extended-column-inner">
+													<p>
+														A qualified Company Secretary, associated with AYLEGUM Advisory
+														LLP and
+														effectively contributing to corporate searches in NPA cases and
+														loan restructuring
+														negotiations for the client Banks/ Financial Institutions.
+													</p>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Mr. Ashok Verma</strong></h4>
+												<p><em>Company Secretary</em></p>
+												<div class="extended-column-inner">
+													<p>
+														A qualified Company Secretary and Taxation expert, associated
+														with AYLEGUM
+														Advisory LLP and effectively contributing to corporate searches
+														in NPA cases and
+														loan restructuring negotiations for the client Banks/ Financial
+														Institutions.
+
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong>Mr. Pradeep Panchal</strong></h4>
+												<p><em>Advocate</em></p>
+												<div class="extended-column-inner">
+													<p>
+
+														Mr. Panchal is Practicing Advocate dealing with Civil and
+														Criminal Law and matters
+														under SARFAESI & RDDBFI Act. He regularly handles matters in
+														DRT, DRAT,
+														High Court and Supreme Court relating to Banking Law.
+													</p>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong></strong></h4>
+												<p><em></em></p>
+												<div class="extended-column-inner">
+													<p>
+
+													</p>
+												</div>
+											</div>
+											<div class="wpv-grid grid-1-3 ">
+												<h4><strong></strong></h4>
+												<p><em></em></p>
+												<div class="extended-column-inner">
+													<p>
+
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sep"></div>
+									<div class="row ">
+										<div class="wpv-grid grid-1-1  wpv-first-level first unextended animation-from-bottom animated-active"
+											style="padding-top:0px;padding-bottom:0px"
+											id="wpv-column-35e3e01de40bb2dcdfd00be9b8922807">
+											<p style="text-align: center;"><span
+													class="vamtam-font-style-1 with-color">“Every mountain top is
+													within reach if you just keep climbing.”</span></p>
+											<p style="text-align: center;"></p>
+											<p style="text-align: center;"><span class="style-1"><img loading="lazy"
+														class="aligncenter size-full wp-image-9399"
+														src="./wp-content/uploads/2013/03/sign2.jpg" alt="sign2"
+														width="129" height="97"></span></p>
+										</div>
+									</div>
+									<div class="push" style='height:50px'></div>
+									<h2 class="text-divider-double">
+										MY PRACTICE AREAS<br>
+									</h2>
+									<div class="sep"></div>
+									<div class="push" style='margin-bottom:-32px'></div>
+									<div id="practice" class="row ">
+										<div class="wpv-grid grid-1-1  wpv-first-level first has-background extended"
+											style="background-color:#4A4F55;padding-top:0px;padding-bottom:0px"
+											id="wpv-column-e17c650ede34e4ea1256e862e0d6fa4e">
+											<div class="extended-column-inner">
+												<style>
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e p,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e em,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e .column-title,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e .sep-text h2.regular-title-wrapper,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e .text-divider-double,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e .sep-text .sep-text-line,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e .sep,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e .sep-2,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e .sep-3,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e td,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e th,
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e caption {
+														color: #cccfd2;
+													}
+
+													#wpv-column-e17c650ede34e4ea1256e862e0d6fa4e:before {
+														background-color: transparent;
+													}
+												</style>
+												<div class="row ">
+													<div class="wpv-grid grid-1-4  first unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-697f4089821f05c38f17fcfbc69132c4">
+														<div data-href="#" tabindex="1" data-target="_self"
+															class="linkarea clearfix accent6  background-accent1">
+															<div class="first"><span
+																	class='icon shortcode theme  use-hover'
+																	style='font-size:46px !important;color:#ffffff;'>&#57430;</span>
+															</div>
+															<div class="last">
+																<h3 style="text-align: center;"><span
+																		class="accent-8">ENFORCEMENT SERVICES</span></h3>
+																<p style="text-align: center;"><span
+																		class="accent-8">nforcement is the activity of some members of government who act in an organized manner to enforce the law by discovering, deterring, rehabilitating, or punishing people who violate the rules and norms governing that society.</span><br></p>
+															</div>
+														</div>
+													</div>
+													<div class="wpv-grid grid-1-4  unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-aa59affdcc77b0c3cfb6fcd58e84dd42">
+														<div data-href="#" tabindex="1" data-target="_self"
+															class="linkarea clearfix accent6  background-accent2">
+															<div class="first"><span
+																	class='icon shortcode theme  use-hover'
+																	style='font-size:46px !important;color:#ffffff;'>&#57430;</span>
+															</div>
+															<div class="last">
+																<h3 style="text-align: center;"><span
+																		class="accent-8">DUE DILIGENCE</span></h3>
+																<p style="text-align: center;"><span
+																		class="accent-8">Due diligence is an investigation, audit, or review performed to confirm facts or details of a matter under consideration. In the financial world, due diligence requires an examination of financial records before entering into a proposed transaction with another party.</span><br></p>
+															</div>
+														</div>
+													</div>
+													<div class="wpv-grid grid-1-4  unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-0e04817bbc9fffdfc49e0e1ecda8296f">
+														<div data-href="#" tabindex="1" data-target="_self"
+															class="linkarea clearfix accent2  background-accent1">
+															<div class="first"><span
+																	class='icon shortcode theme  use-hover'
+																	style='font-size:46px !important;color:#ffffff;'>&#57430;</span>
+															</div>
+															<div class="last">
+																<h3 style="text-align: center;"><span
+																		class="accent-8">LITIGATION
+																		</span>
+																</h3>
+																<p style="text-align: center;"><span
+																		class="accent-8">Litigation is a process for handling disputes in the court system. Litigation is a contested action, where someone else, such as a judge may make the final decisions for the parties unless the parties settle before trial.</span><br></p>
+															</div>
+														</div>
+													</div>
+													<div class="wpv-grid grid-1-4  unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-7731550a3cbcb9bd1316da4cd2672aa7">
+														<div data-href="#" tabindex="1" data-target="_self"
+															class="linkarea clearfix accent6  background-accent2">
+															<div class="first"><span
+																	class='icon shortcode theme  use-hover'
+																	style='font-size:46px !important;color:#ffffff;'>&#57430;</span>
+															</div>
+															<div class="last">
+																<h3 style="text-align: center;"><span
+																		class="accent-8">INVESTIGATION
+																		</span>
+																</h3>
+																<p style="text-align: center;"><span
+																		class="accent-8">An investigation refers to the proceedings or steps taken by an authority like Police Officer. An investigation is not conducted by Magistrate, it is conducted by a person authorized in this behalf by the Magistrate. An Inquiry primarily aims at determining the truth of reported crime or falsity of facts if any.</span><br></p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row ">
+													<div class="wpv-grid grid-1-4  first unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-3cc8857db778ee006297d4c8be717505">
+														<div data-href="#" tabindex="1" data-target="_self"
+															class="linkarea clearfix accent6  background-accent2">
+															<div class="first"><span
+																	class='icon shortcode theme  use-hover'
+																	style='font-size:46px !important;color:#ffffff;'>&#57430;</span>
+															</div>
+															<div class="last">
+																<h3 style="text-align: center;"><span
+																		class="accent-8">ASSET DISPOSAL
+																		</span>
+																</h3>
+																<p style="text-align: center;"><span
+																		class="accent-8">Asset disposal is the removal of a long-term asset from the company's accounting records. The asset disposal may be a result of several events: An asset is fully depreciated and must be disposed of. An asset is sold because it is no longer useful or needed.</span><br></p>
+															</div>
+														</div>
+													</div>
+													<div class="wpv-grid grid-1-4  unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-88a2ffefa434699448ef0e986d4a0326">
+														<div data-href="#" tabindex="1" data-target="_self"
+															class="linkarea clearfix accent6  background-accent1">
+															<div class="first"><span
+																	class='icon shortcode theme  use-hover'
+																	style='font-size:46px !important;color:#ffffff;'>&#57430;</span>
+															</div>
+															<div class="last">
+																<h3 style="text-align: center;"><span
+																		class="accent-8">SECURITY SERVICES</span></h3>
+																<p style="text-align: center;"><span
+																		class="accent-8">Security services means services, whether provided by a third party for consideration, or by employees as an internal, proprietary function, to protect people or property, including activities to: Patrol, guard, or monitor property (including real property as well as tangible or intangible personal property</span><br></p>
+															</div>
+														</div>
+													</div>
+													<div class="wpv-grid grid-1-4  unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-8e6771b44b0afcdfa2b5ce11650cdaba">
+														<div data-href="#" tabindex="1" data-target="_self"
+															class="linkarea clearfix accent6  background-accent2">
+															<div class="first"><span
+																	class='icon shortcode theme  use-hover'
+																	style='font-size:46px !important;color:#ffffff;'>&#57430;</span>
+															</div>
+															<div class="last">
+																<h3 style="text-align: center;"><span
+																		class="accent-8">REGISTRATION OF ASSIGNMENT AGREEMENT</span>
+																</h3>
+																<p style="text-align: center;"><span
+																		class="accent-8">This assignment has to be duly signed by both the parties involved. It has to be registered on filing of application through Form 10 within 6 months from the date of execution of assignment/instrument. Further extension of 6 months is also available.</span><br></p>
+															</div>
+														</div>
+													</div>
+													<div class="wpv-grid grid-1-4  unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-62489525b790bc0d40b859bb0f18b255">
+														<div data-href="#" tabindex="1" data-target="_self"
+															class="linkarea clearfix accent6  background-accent1">
+															<div class="first"><span
+																	class='icon shortcode theme  use-hover'
+																	style='font-size:46px !important;color:#ffffff;'>&#57430;</span>
+															</div>
+															<div class="last">
+																<h3 style="text-align: center;"><span
+																		class="accent-8">LEGAL SERVICES</span></h3>
+																<p style="text-align: center;"><span
+																		class="accent-8">legal service means help or assistance or free service in the field of law. ... “Legal service includes rendering of any service in the conduct of any other proceedings before any court or other authority or tribunal and the giving of any advice of any legal matter.”</span><br></p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--
+									<h2 class="text-divider-double">
+										WHAT SAY MY CLIENTS:<br>
+									</h2>
+									<div class="sep"></div>
+									<div class="push" style='margin-bottom:-32px'></div>
+									<div class="row ">
+										<div class="wpv-grid grid-1-1  wpv-first-level first has-background extended"
+											style="background: url( './wp-content/uploads/2014/09/bg_5.jpg' );background-size: cover;background-attachment: fixed;padding-top:80px;padding-bottom:80px"
+											id="wpv-column-10f49c141b316032f474cabde80c4b3b">
+											<div class="extended-column-inner">
+												<div class="row ">
+													<div class="wpv-grid grid-3-5  first unextended"
+														style="padding-top:0px;padding-bottom:0px"
+														id="wpv-column-2d6e186de30915bf5fca7864f68085cf">
+														<div class="vamtam-cubeportfolio cbp cbp-slider-edge vamtam-testimonials-slider"
+															data-options="{&quot;layoutMode&quot;:&quot;slider&quot;,&quot;drag&quot;:true,&quot;auto&quot;:true,&quot;autoTimeout&quot;:5000,&quot;autoPauseOnHover&quot;:true,&quot;showNavigation&quot;:false,&quot;showPagination&quot;:true,&quot;rewindNav&quot;:true,&quot;scrollByPage&quot;:false,&quot;gridAdjustment&quot;:&quot;responsive&quot;,&quot;mediaQueries&quot;:[{&quot;width&quot;:1,&quot;cols&quot;:1}],&quot;gapHorizontal&quot;:0,&quot;gapVertical&quot;:0,&quot;caption&quot;:&quot;&quot;,&quot;displayType&quot;:&quot;default&quot;}">
+															<div class="cbp-item">
+																<blockquote class='clearfix small simple'>
+																	<div class="quote-thumbnail"><img width="250"
+																			height="250"
+																			src="./wp-content/uploads/2014/03/people-6-250x250.jpg"
+																			class="attachment-thumbnail size-thumbnail wp-post-image"
+																			alt="" loading="lazy"
+																			srcset="./wp-content/uploads/2014/03/people-6-250x250.jpg 250w, ./wp-content/uploads/2014/03/people-6-60x60.jpg 60w, ./wp-content/uploads/2014/03/people-6-43x43.jpg 43w, ./wp-content/uploads/2014/03/people-6-60x60@2x.jpg 120w, ./wp-content/uploads/2014/03/people-6-43x43@2x.jpg 86w"
+																			sizes="(max-width: 250px) 100vw, 250px"><strong
+																			class='quote-title'><span
+																				class='the-title'>Rodney
+																				Stratton</span></strong></div>
+																	<div class='quote-text'>
+																		<div class="quote-content">
+																			<div class="vamtam-font-style-1 with-color">
+																				The Law is hard, but it is the Law.
+																			</div>
+																			<span class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span>
+																			<br><br>
+																			Claritas est etiam processus dynamicus,
+																			qui sequitur mutationem consuetudium
+																			lectorum. Mirum est notare quam littera
+																			gothica, quam nunc putamus parum claram,
+																			anteposuerit litterarum formas
+																			humanitatis pe.
+																			Claritas est etiam processus dynamicus,
+																			qui sequitur mutationem consuetudium
+																			lectorum. Mirum est notare quam littera
+																			gothica, quam nunc putamus parum claram,
+																			anteposuerit litterarum formas
+																			humanitatis pe.
+																			Claritas est etiam processus dynamicus,
+																			qui sequitur mutationem consuetudium
+																			lectorum. Mirum est notare quam littera
+																			gothica, quam nunc putamus parum claram,
+																			anteposuerit litterarum formas
+																			humanitatis pe.
+																		</div>
+																	</div>
+																</blockquote>
+															</div>
+															<div class="cbp-item">
+																<blockquote class='clearfix small simple'>
+																	<div class="quote-thumbnail"><img width="250"
+																			height="250"
+																			src="./wp-content/uploads/2014/03/people-1-250x250.jpg"
+																			class="attachment-thumbnail size-thumbnail wp-post-image"
+																			alt="" loading="lazy"
+																			srcset="./wp-content/uploads/2014/03/people-1-250x250.jpg 250w, ./wp-content/uploads/2014/03/people-1-60x60.jpg 60w, ./wp-content/uploads/2014/03/people-1-43x43.jpg 43w, ./wp-content/uploads/2014/03/people-1-60x60@2x.jpg 120w, ./wp-content/uploads/2014/03/people-1-43x43@2x.jpg 86w"
+																			sizes="(max-width: 250px) 100vw, 250px"><strong
+																			class='quote-title'><span
+																				class='the-title'>Ashley
+																				Fletcher</span></strong></div>
+																	<div class='quote-text'>
+																		<div class="quote-content">
+																			<div class="vamtam-font-style-1 with-color">
+																				The Law is hard, but it is the Law.
+																			</div>
+																			<span class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span>
+																			<br><br>
+																			Claritas est etiam processus dynamicus,
+																			qui sequitur mutationem consuetudium
+																			lectorum. Mirum est notare quam littera
+																			gothica, quam nunc putamus parum claram,
+																			anteposuerit litterarum formas
+																			humanitatis pe.
+																		</div>
+																	</div>
+																</blockquote>
+															</div>
+															<div class="cbp-item">
+																<blockquote class='clearfix small simple'>
+																	<div class="quote-thumbnail"><img width="250"
+																			height="250"
+																			src="./wp-content/uploads/2014/03/people-2-250x250.jpg"
+																			class="attachment-thumbnail size-thumbnail wp-post-image"
+																			alt="" loading="lazy"
+																			srcset="./wp-content/uploads/2014/03/people-2-250x250.jpg 250w, ./wp-content/uploads/2014/03/people-2-60x60.jpg 60w, ./wp-content/uploads/2014/03/people-2-43x43.jpg 43w, ./wp-content/uploads/2014/03/people-2-60x60@2x.jpg 120w, ./wp-content/uploads/2014/03/people-2-43x43@2x.jpg 86w"
+																			sizes="(max-width: 250px) 100vw, 250px"><strong
+																			class='quote-title'><span
+																				class='the-title'>Robert H.
+																				Schuller</span></strong></div>
+																	<div class='quote-text'>
+																		<div class="quote-content">
+																			<div class="vamtam-font-style-1 with-color">
+																				Useless laws weaken the necessary
+																				laws.</div>
+																			<span class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span> <span
+																				class='icon shortcode   use-hover'
+																				style='font-size:20px !important;color:#CCA876;'>&#57864;</span>
+																			<br><br>
+																			Claritas est etiam processus dynamicus,
+																			qui sequitur mutationem consuetudium
+																			lectorum. Mirum est notare quam littera
+																			gothica, quam nunc putamus parum claram,
+																			anteposuerit litterarum formas
+																			humanitatis pe.
+																		</div>
+																	</div>
+																</blockquote>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<h2 class="text-divider-double">
+										My BLOG &amp; GALLERY<br>
+									</h2>
+									<div class="sep"></div>
+									<div class="row ">
+										<div class="wpv-grid grid-1-2  wpv-first-level first unextended"
+											style="padding-top:0px;padding-bottom:0px"
+											id="wpv-column-cbdae79855fd9694e15f87e5882c15f2">
+											<div class="loop-wrapper clearfix news row small not-paginated"
+												data-columns="2">
+												<div
+													class="page-content post-header grid-1-2 clearboth list-item post-294 post type-post status-publish format-image has-post-thumbnail hentry category-legal-advice post_format-post-format-image">
+													<div>
+														<div class="post-article has-image-wrapper ">
+															<div class="image-post-format clearfix as-normal ">
+																<div class="thumbnail">
+																	<a href="https://lawyers-attorneys.vamtam.com/he-made-the-first-step/"
+																		title="He made the first step!">
+																		<img width="555" height="426"
+																			src="./wp-content/uploads/2014/09/Blog-photos2-555x426.jpg"
+																			class="attachment-post-small-2 size-post-small-2 wp-post-image"
+																			alt="" loading="lazy"
+																			srcset="./wp-content/uploads/2014/09/Blog-photos2-555x426.jpg 555w, ./wp-content/uploads/2014/09/Blog-photos2-480x369.jpg 480w, ./wp-content/uploads/2014/09/Blog-photos2-360x276.jpg 360w, ./wp-content/uploads/2014/09/Blog-photos2-262x201.jpg 262w, ./wp-content/uploads/2014/09/Blog-photos2-360x276@2x.jpg 720w, ./wp-content/uploads/2014/09/Blog-photos2-262x201@2x.jpg 524w"
+																			sizes="(min-width: 900px) 50vw, 100vw">
+																		<span class='icon shortcode theme  use-hover'
+																			style=''>&#58897;</span> </a>
+																</div>
+																<div class="post-content-wrapper">
+																	<div class="post-actions-wrapper clearfix">
+																		<div class="post-date date updated">
+																			January 10, 2014 </div>
+																		<div class="comment-count">
+																			<a
+																				href="https://lawyers-attorneys.vamtam.com/he-made-the-first-step/#respond"><span
+																					class="icon">&#57582;</span>0
+																				<span
+																					class="comment-word visuallyhidden">Comments</span></a>
+																		</div>
+																	</div>
+																	<header class="single">
+																		<div class="content">
+																			<h3>
+																				<a href="https://lawyers-attorneys.vamtam.com/he-made-the-first-step/"
+																					title="He made the first step!"
+																					class="entry-title">He made the
+																					first step!</a>
+																			</h3>
+																		</div>
+																	</header>
+																	<div class="post-content-outer">
+																		<p>Working from home meant we could vary
+																			snack and coffee breaks, change our
+																			desks or&#8230;</p>
+																	</div>
+																	<div class="post-content-meta">
+																		<div class="vcard author"><span
+																				class="icon theme">&#57398;</span><span
+																				class="fn"><a
+																					href="https://lawyers-attorneys.vamtam.com/author/admin/"
+																					title="Posts by Gary Jones"
+																					rel="author">Gary
+																					Jones</a></span></div>
+																		<div>
+																			Posted in: <a
+																				href="https://lawyers-attorneys.vamtam.com/legal-advice/"
+																				rel="category tag">Legal Advice</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="page-content post-header grid-1-2 list-item post-304 post type-post status-publish format-image has-post-thumbnail hentry category-legal-advice post_format-post-format-image">
+													<div>
+														<div class="post-article has-image-wrapper ">
+															<div class="image-post-format clearfix as-normal ">
+																<div class="thumbnail">
+																	<a href="https://lawyers-attorneys.vamtam.com/rules-are-for-children/"
+																		title="This is war, and in war the only crime is to lose.">
+																		<img width="555" height="426"
+																			src="./wp-content/uploads/2014/09/Blog-photos1-555x426.jpg"
+																			class="attachment-post-small-2 size-post-small-2 wp-post-image"
+																			alt="" loading="lazy"
+																			srcset="./wp-content/uploads/2014/09/Blog-photos1-555x426.jpg 555w, ./wp-content/uploads/2014/09/Blog-photos1-480x369.jpg 480w, ./wp-content/uploads/2014/09/Blog-photos1-360x276.jpg 360w, ./wp-content/uploads/2014/09/Blog-photos1-262x201.jpg 262w, ./wp-content/uploads/2014/09/Blog-photos1-360x276@2x.jpg 720w, ./wp-content/uploads/2014/09/Blog-photos1-262x201@2x.jpg 524w"
+																			sizes="(min-width: 900px) 50vw, 100vw">
+																		<span class='icon shortcode theme  use-hover'
+																			style=''>&#58897;</span> </a>
+																</div>
+																<div class="post-content-wrapper">
+																	<div class="post-actions-wrapper clearfix">
+																		<div class="post-date date updated">
+																			September 23, 2013 </div>
+																		<div class="comment-count">
+																			<a
+																				href="https://lawyers-attorneys.vamtam.com/rules-are-for-children/#respond"><span
+																					class="icon">&#57582;</span>0
+																				<span
+																					class="comment-word visuallyhidden">Comments</span></a>
+																		</div>
+																	</div>
+																	<header class="single">
+																		<div class="content">
+																			<h3>
+																				<a href="https://lawyers-attorneys.vamtam.com/rules-are-for-children/"
+																					title="This is war, and in war the only crime is to lose."
+																					class="entry-title">This is war,
+																					and in war the only crime is to
+																					lose.</a>
+																			</h3>
+																		</div>
+																	</header>
+																	<div class="post-content-outer">
+																		<p>Working from home meant we could vary
+																			snack and coffee breaks, change our
+																			desks or&#8230;</p>
+																	</div>
+																	<div class="post-content-meta">
+																		<div class="vcard author"><span
+																				class="icon theme">&#57398;</span><span
+																				class="fn"><a
+																					href="https://lawyers-attorneys.vamtam.com/author/admin/"
+																					title="Posts by Gary Jones"
+																					rel="author">Gary
+																					Jones</a></span></div>
+																		<div>
+																			Posted in: <a
+																				href="https://lawyers-attorneys.vamtam.com/legal-advice/"
+																				rel="category tag">Legal Advice</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="wpv-grid grid-1-2  wpv-first-level unextended"
+											style="padding-top:0px;padding-bottom:0px"
+											id="wpv-column-4807a1b79ecc7950b039e6235f8a1b6a">
+											<div class="row ">
+												<div class="wpv-grid grid-1-1  first unextended"
+													style="padding-top:0px;padding-bottom:0px"
+													id="wpv-column-1f2bd38c4246fc7653d730ff06062ecf">
+													<section
+														class="portfolios normal clearfix title-false no-description "
+														id="60c24b5905df7">
+														<div class="portfolio-items vamtam-cubeportfolio cbp portfolio-items "
+															data-columns="2"
+															data-options="{&quot;layoutMode&quot;:&quot;grid&quot;,&quot;defaultFilter&quot;:&quot;*&quot;,&quot;animationType&quot;:&quot;slideDelay&quot;,&quot;gapHorizontal&quot;:30,&quot;gapVertical&quot;:30,&quot;gridAdjustment&quot;:&quot;responsive&quot;,&quot;mediaQueries&quot;:[{&quot;width&quot;:555,&quot;cols&quot;:2},{&quot;width&quot;:262.5,&quot;cols&quot;:1}],&quot;displayType&quot;:&quot;bottomToTop&quot;,&quot;displayTypeSpeed&quot;:100,&quot;showPagination&quot;:false}"
+															data-hidden-by-filters="New items were loaded, but they are hidden because of your choice of filters">
+															<div data-id="325" data-type="image-lightbox"
+																class="no-title no-description grid-1-2 no-button state-closed vamtam-project cbp-item"
+																style="width: 50%">
+																<div class="portfolio-item-wrapper">
+																	<div class="portfolio-image">
+																		<div class="thumbnail" style="max-height:400px">
+																			<a href="./wp-content/uploads/2014/09/Portfolio-Photos1.jpg"
+																				class="meta  vamtam-lightbox">
+																				<img width="555" height="370"
+																					src="./wp-content/uploads/2014/09/Portfolio-Photos1-555x370.jpg"
+																					class="attachment-portfolio-loop-2 size-portfolio-loop-2 wp-post-image"
+																					alt="" loading="lazy"
+																					srcset="./wp-content/uploads/2014/09/Portfolio-Photos1-555x370.jpg 555w, ./wp-content/uploads/2014/09/Portfolio-Photos1-550x366.jpg 550w, ./wp-content/uploads/2014/09/Portfolio-Photos1-600x400.jpg 600w, ./wp-content/uploads/2014/09/Portfolio-Photos1-1140x760.jpg 1140w, ./wp-content/uploads/2014/09/Portfolio-Photos1-360x240.jpg 360w, ./wp-content/uploads/2014/09/Portfolio-Photos1-262x175.jpg 262w, ./wp-content/uploads/2014/09/Portfolio-Photos1.jpg 1200w, ./wp-content/uploads/2014/09/Portfolio-Photos1-555x370@2x.jpg 1110w, ./wp-content/uploads/2014/09/Portfolio-Photos1-550x366@2x.jpg 1100w, ./wp-content/uploads/2014/09/Portfolio-Photos1-360x240@2x.jpg 720w, ./wp-content/uploads/2014/09/Portfolio-Photos1-262x175@2x.jpg 524w"
+																					sizes="(min-width: 900px) 50vw, 100vw">
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div data-id="320" data-type="image-link"
+																class="no-title no-description grid-1-2 no-button state-closed vamtam-project cbp-item"
+																style="width: 50%">
+																<div class="portfolio-item-wrapper">
+																	<div class="portfolio-image">
+																		<div class="thumbnail" style="max-height:400px">
+																			<a href="https://lawyers-attorneys.vamtam.com/portfolio/working-on-the-new-case/"
+																				class="meta  no-lightbox">
+																				<img width="555" height="370"
+																					src="./wp-content/uploads/2014/09/Portfolio-Photos2-555x370.jpg"
+																					class="attachment-portfolio-loop-2 size-portfolio-loop-2 wp-post-image"
+																					alt="" loading="lazy"
+																					srcset="./wp-content/uploads/2014/09/Portfolio-Photos2-555x370.jpg 555w, ./wp-content/uploads/2014/09/Portfolio-Photos2-550x366.jpg 550w, ./wp-content/uploads/2014/09/Portfolio-Photos2-600x400.jpg 600w, ./wp-content/uploads/2014/09/Portfolio-Photos2-1140x760.jpg 1140w, ./wp-content/uploads/2014/09/Portfolio-Photos2-360x240.jpg 360w, ./wp-content/uploads/2014/09/Portfolio-Photos2-262x175.jpg 262w, ./wp-content/uploads/2014/09/Portfolio-Photos2.jpg 1200w, ./wp-content/uploads/2014/09/Portfolio-Photos2-555x370@2x.jpg 1110w, ./wp-content/uploads/2014/09/Portfolio-Photos2-550x366@2x.jpg 1100w, ./wp-content/uploads/2014/09/Portfolio-Photos2-360x240@2x.jpg 720w, ./wp-content/uploads/2014/09/Portfolio-Photos2-262x175@2x.jpg 524w"
+																					sizes="(min-width: 900px) 50vw, 100vw">
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div data-id="322" data-type="image-link"
+																class="no-title no-description grid-1-2 no-button state-closed vamtam-project cbp-item"
+																style="width: 50%">
+																<div class="portfolio-item-wrapper">
+																	<div class="portfolio-image">
+																		<div class="thumbnail" style="max-height:400px">
+																			<a href="https://lawyers-attorneys.vamtam.com/portfolio/hello-san-francisco/"
+																				class="meta  no-lightbox">
+																				<img width="555" height="370"
+																					src="./wp-content/uploads/2014/09/Portfolio-Photos12-555x370.jpg"
+																					class="attachment-portfolio-loop-2 size-portfolio-loop-2 wp-post-image"
+																					alt="" loading="lazy"
+																					srcset="./wp-content/uploads/2014/09/Portfolio-Photos12-555x370.jpg 555w, ./wp-content/uploads/2014/09/Portfolio-Photos12-550x366.jpg 550w, ./wp-content/uploads/2014/09/Portfolio-Photos12-600x400.jpg 600w, ./wp-content/uploads/2014/09/Portfolio-Photos12-1140x760.jpg 1140w, ./wp-content/uploads/2014/09/Portfolio-Photos12-360x240.jpg 360w, ./wp-content/uploads/2014/09/Portfolio-Photos12-262x175.jpg 262w, ./wp-content/uploads/2014/09/Portfolio-Photos12.jpg 1200w, ./wp-content/uploads/2014/09/Portfolio-Photos12-555x370@2x.jpg 1110w, ./wp-content/uploads/2014/09/Portfolio-Photos12-550x366@2x.jpg 1100w, ./wp-content/uploads/2014/09/Portfolio-Photos12-360x240@2x.jpg 720w, ./wp-content/uploads/2014/09/Portfolio-Photos12-262x175@2x.jpg 524w"
+																					sizes="(min-width: 900px) 50vw, 100vw">
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div data-id="315" data-type="image-link"
+																class="no-title no-description grid-1-2 no-button state-closed vamtam-project cbp-item"
+																style="width: 50%">
+																<div class="portfolio-item-wrapper">
+																	<div class="portfolio-image">
+																		<div class="thumbnail" style="max-height:400px">
+																			<a href="https://lawyers-attorneys.vamtam.com/portfolio/our-library-is-great-treasure/"
+																				class="meta  no-lightbox">
+																				<img width="555" height="370"
+																					src="./wp-content/uploads/2014/09/Portfolio-Photos4-555x370.jpg"
+																					class="attachment-portfolio-loop-2 size-portfolio-loop-2 wp-post-image"
+																					alt="" loading="lazy"
+																					srcset="./wp-content/uploads/2014/09/Portfolio-Photos4-555x370.jpg 555w, ./wp-content/uploads/2014/09/Portfolio-Photos4-550x366.jpg 550w, ./wp-content/uploads/2014/09/Portfolio-Photos4-600x400.jpg 600w, ./wp-content/uploads/2014/09/Portfolio-Photos4-1140x760.jpg 1140w, ./wp-content/uploads/2014/09/Portfolio-Photos4-360x240.jpg 360w, ./wp-content/uploads/2014/09/Portfolio-Photos4-262x175.jpg 262w, ./wp-content/uploads/2014/09/Portfolio-Photos4.jpg 1200w, ./wp-content/uploads/2014/09/Portfolio-Photos4-555x370@2x.jpg 1110w, ./wp-content/uploads/2014/09/Portfolio-Photos4-550x366@2x.jpg 1100w, ./wp-content/uploads/2014/09/Portfolio-Photos4-360x240@2x.jpg 720w, ./wp-content/uploads/2014/09/Portfolio-Photos4-262x175@2x.jpg 524w"
+																					sizes="(min-width: 900px) 50vw, 100vw">
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
+												</div>
+											</div>
+										</div>
+									</div>-->
+									<div class="push" style='height:80px'></div>
+									<div id="downloads" class="row ">
+										<div class="wpv-grid grid-1-1  wpv-first-level parallax-bg first has-background extended"
+											style="
+				background: url( './wp-content/uploads/2014/09/bg_1.jpg' ) no-repeat center top;
+				background-size: cover;
+			background-attachment: fixed;padding-top:0px;padding-bottom:50px" id="REQUESTFORM" data-parallax-method="to-centre"
+											data-parallax-inertia="-0.2">
+											<div class="extended-column-inner">
+												<h2 class="text-divider-double">
+													DOWNLOADS </h2>
+												<div class="sep"></div>
+												<div class="row">
+													<div class="row ">
+														<div class="wpv-grid grid-1-1  first unextended"
+															style="padding-top:0px;padding-bottom:0px"
+															id="wpv-column-070438016402906dca37c9ce9c175f52">
+															<div class="push" style='margin-bottom:-20px'></div>
+															<p style="text-align: center;"><span
+																	class="vamtam-font-style-2 accent-4">For More information, refer to the following documents.</span></p>
+															<div class="push" style='height:20px'></div>
+														</div>
+													</div>
+													<div class="wpv-grid grid-1-2 wpcf7-form-control wpcf7-submit" style="text-align: center;">
+														<div class="extended-column-inner" style="text-align: center;background-color: #CCA876;height: 50px;padding-top: 1%;">
+															<a style="color: white;" href="./assets/AYlegum Profile (CH).pdf" target="_blank"><h4><strong style="font-size: 150%;color: white;">DOCUMENT_1</strong></h4></a>
+														</div>
+													</div>
+													<div class="wpv-grid grid-1-2 wpcf7-form-control wpcf7-submit" style="text-align: center;">
+														<div class="extended-column-inner" style="text-align: center;background-color: #CCA876;height: 50px;padding-top: 1%;">
+															<a style="color: white;" href="./assets/PB-Chand Profile-.pdf" target="_blank"><h4><strong style="font-size: 150%;color: white;">DOCUMENT_2</strong></h4></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="map" class="container-fluid">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.177692049024!2d77.29153251507768!3d28.41389468250456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cddda6a94f949%3A0x4e4e636c0a8a7c8f!2s374%2C%20Sector%2021D%2C%20Faridabad%2C%20Haryana%20121012!5e0!3m2!1sen!2sin!4v1623778115399!5m2!1sen!2sin"
+					width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			</div>
+			<footer id="contact" class="main-footer">
+				<div class="footer-sidebars-wrapper">
+					<div id="footer-sidebars" data-rows="6">
+						<div class="row" data-num="0">
+							<aside class="full  last ">
+								<section id="text-17" class="widget widget_text">
+									<div class="textwidget">
+										<div class="push" style='height:5px'></div>
+										<p style="text-align: center;"><a class="wpv-scroll-to-top" href="#">– ↑
+												BACK TO TOP –</a></p>
+										<div class="push" style='height:20px'></div>
+									</div>
+								</section>
+								<section id="nav_menu-14" class="widget widget_nav_menu">
+									<div class="menu-horizontal-footer-container">
+										<ul id="menu-horizontal-footer" class="menu">
+											<li id="menu-item-9387"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-9387">
+												<a href="#">Home</a>
+											</li>
+											<li id="menu-item-9384"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9384">
+												<a href="#about">About</a>
+											</li>
+											<li id="menu-item-9383"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9383">
+												<a href="#practice">Practice
+													Areas</a>
+											</li>
+											<li id="menu-item-9386"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9386">
+												<a href="#board">Team</a>
+											</li>
+											<li id="menu-item-9385"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9385">
+												<a href="#downloads">Downloads</a>
+											</li>
+											<li id="menu-item-9388"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9388">
+												<a
+													href="https://www.linkedin.com/in/aman-kaushik-7b4b15211">Follow</a>
+											</li>
+											<li id="menu-item-9389"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9389">
+												<a href="#contact">Contacts</a>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</aside>
+						</div>
+						<div class="row" data-num="1">
+							<aside class="full  last ">
+								<section id="text-18" class="widget widget_text">
+									<div class="textwidget">
+										<div class="row ">
+											<div class="wpv-grid grid-1-4  wpv-first-level first unextended animation-from-bottom animated-active"
+												style="padding-top:0px;padding-bottom:0px"
+												id="wpv-column-cc9faf47d8a7a3fe1d15cf3100f8ab1c">
+												<div class="push" style='height:15px'></div>
+												<h4><span class="accent-8"></span></h4>
+												<div class="push" style='margin-bottom:-15px'></div>
+												<h2><span class="accent-1">+91 989 114 2555</span></h2>
+											</div>
+											<div class="wpv-grid grid-1-4  wpv-first-level unextended animation-from-bottom animated-active"
+												style="padding-top:0px;padding-bottom:0px"
+												id="wpv-column-a6b5bae6e758bf95c134a1c3a599306c">
+												<div class="push" style='height:15px'></div>
+												<h4 style="padding-left: 5px;">
+													<span class="accent-8"> </span>
+												</h4>
+												<div class="push" style='margin-bottom:-15px'></div>
+												<h2 style="padding-left: 5px;">
+													<span class="accent-1">+91 880 077 0007</span>
+												</h2>
+											</div>
+											<div class="wpv-grid grid-1-2  wpv-first-level unextended animation-from-bottom animated-active"
+												style="padding-top:0px;padding-bottom:0px"
+												id="wpv-column-8c2fe6b8ae3d9e63bba31d6ec5e4811f">
+												<p style="padding-left: 15px;"><a
+														href="mailto:aylegumadvisory@gmail.com" target="_self"
+														style='font-size: 16px;'
+														class="button vamtam-button accent8  button-border hover-accent1  alignleft"
+														rel="noopener"><span class='icon shortcode theme  use-hover'
+															style='font-size:24px !important;color:#CCA876;'>&#57473;</span><span
+															class="btext"><strong>E-mail &nbsp; :</strong>
+															aylegumadvisory@gmail.com</span></a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</section>
+							</aside>
+						</div>
+						<div class="row" data-num="2">
+							<aside class="cell-1-4  fit">
+								<section id="text-13" class="widget widget_text">
+									<h4 class="widget-title">About</h4>
+									<div class="textwidget">
+										<p>Aylegum Advisory LLP is headquartered at Delhi, the company has a
+											dedicated team of
+											professionals from the fields of Law, Finance and Banking providing
+											services to Domestic and
+											International Corporates.</p>
+										<p><a href="tel:+919891142555" target="_self" style='font-size: 12px;'
+												class="button vamtam-button accent1  button-border hover-accent1  alignleft"
+												rel="noopener"><span class="btext">Call Now</span></a></p>
+									</div>
+								</section>
+							</aside>
+							<aside class="cell-1-4  fit">
+								<section id="nav_menu-13" class="widget widget_nav_menu">
+									<h4 class="widget-title">Practice Areas</h4>
+									<div class="menu-services-container">
+										<ul id="menu-services" class="menu">
+											<li id="menu-item-9376"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9376">
+												<a href="#about">ENFORCEMENT
+													SERVICES →</a>
+											</li>
+											<li id="menu-item-9377"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9377">
+												<a href="#about">DUE
+													DILIGENCE →</a>
+											</li>
+											<li id="menu-item-9378"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9378">
+												<a href="#about">LITIGATION
+													→</a>
+											</li>
+											<li id="menu-item-9379"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9379">
+												<a href="#about">INVESTIGATION
+													→</a>
+											</li>
+											<li id="menu-item-9380"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9380">
+												<a href="#about">ASSET
+													DISPOSAL →</a>
+											</li>
+											<li id="menu-item-9381"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9381">
+												<a href="#about">SECURITY
+													SERVICES →</a>
+											</li>
+											<li id="menu-item-9382"
+												class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9382">
+												<a href="#about">REGISTRATION
+													OF ASSIGNMENT AGREEMENT →</a>
+											</li>
+										</ul>
+									</div>
+								</section>
+							</aside>
+							<aside class="cell-1-4  fit">
+								<section id="text-15" class="widget widget_text">
+									<h4 class="widget-title">Ludhiana, Punjab</h4>
+									<div class="textwidget">Gali No. 4 ½, Dashmesh Nagar, <br>Gill Road (141008) <br>
+										<p>Mobile: +91 989 114 2555<br>
+											E-mail: <a href="mailto:aylegumadvisory@gmail.com"><span>aylegumadvisory@gmail.com</span></a>
+										</p>
+										<a
+											href="https://www.google.com/maps?q=Gali+No.+4+%C2%BD,+Dashmesh+Nagar,+Gill+Road,+Ludhiana-141008+Punjab&um=1&ie=UTF-8&sa=X&ved=2ahUKEwjw142Tk5rxAhWX73MBHfItD8QQ_AUoAXoECAEQAw">Get
+											directions on the map</a> →
+									</div>
+								</section>
+							</aside>
+							<aside class="cell-1-4  last fit">
+								<section id="text-16" class="widget widget_text">
+									<h4 class="widget-title">Delhi NCR</h4>
+									<div class="textwidget">LGF, 374 Sector-21 D Faridabad<br>Haryana (121001)<br>
+										<p>Mobile: +91 880 077 0007<br>
+											E-mail: <a href="mailto:aylegumadvisory@gmail.com"><span>aylegumadvisory@gmail.com</span></a>
+										</p>
+										<a
+											href="https://www.google.com/maps?q=LGF,+374+Sector-21+D+Faridabad+Haryana,+121001&um=1&ie=UTF-8&sa=X&ved=2ahUKEwje76ixk5rxAhX39nMBHczzB58Q_AUoAXoECAEQAw">Get
+											directions on the map</a> →
+									</div>
+								</section>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="copyrights">
+				<div class="limit-wrapper">
+					<div class="row">
+						<div class="row ">
+							<div class="wpv-grid grid-2-5  wpv-first-level first unextended"
+								style="padding-top:0px;padding-bottom:0px"
+								id="wpv-column-dc5ff4e1874d563151e11c32d53ea6ea">
+								<div class="push" style='height:30px'></div>
+								<p style="text-align: left;">© 2021 <a href="#">All Rights Reserved</a> by <a
+										href="#" target="_blank">Aylegum Advisory LLP</a></p>
+							</div>
+							<div class="wpv-grid grid-1-4  wpv-first-level unextended"
+								style="padding-top:0px;padding-bottom:0px"
+								id="wpv-column-3ce87794ea716f8226e425db1c715356">
+								<div class="push" style='height:20px'></div><a href="#"><img
+										class="aligncenter size-full wp-image-9366" src="./assets/logo (1).png"
+										alt="logo-footer" width="258" height="52"></a>
+								<div class="push" style='height:15px'></div>
+							</div>
+							<div class="wpv-grid grid-1-3  wpv-first-level unextended"
+								style="padding-top:0px;padding-bottom:0px"
+								id="wpv-column-62f6da464e6ee090b3e8493ca98b8dca">
+								<div class="push" style='height:25px'></div>
+								<p style="text-align: right;"> <a href="#"><span class='icon shortcode   use-hover'
+											style='font-size:18px !important;color:#CCA876;'>&#58155;</span></a> 
+									  <a href="#"><span class='icon shortcode   use-hover'
+											style='font-size:18px !important;color:#CCA876;'>&#58159;</span></a>  
+									 <a href="#"><span class='icon shortcode theme  use-hover'
+											style='font-size:18px !important;color:#CCA876;'>&#58904;</span></a> 
+									  <a href="#"><span class='icon shortcode   use-hover'
+											style='font-size:18px !important;color:#CCA876;'>&#58162;</span></a>  
+									 <a class="wpv-overlay-search-trigger" href="#"><span
+											class='icon shortcode   use-hover'
+											style='font-size:18px !important;color:#CCA876;'>&#57645;</span></a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div id="wpv-overlay-search">
+		<form action="https://lawyers-attorneys.vamtam.com/" class="searchform" method="get" role="search"
+			novalidate="">
+			<input type="text" required="required" placeholder="Search..." name="s" value="">
+			<button type="submit" class="icon theme">&#58889;</button>
+		</form>
+	</div>
+	<div id="scroll-to-top" class="icon">˄</div>
+	<script data-cfasync="false" src="./cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script id='wpvpm-menu-item' type='text/html'>
+		<li>
+		<% if(children.length > 0) { %>
+		<a href="#" class="has-children <%= _.escape(classes.join(' ')) %>" title="<%= _.escape(attr_title) %>"><%= title %></a>
+		<div class="mp-level">
+			<div class="mp-level-header">
+				<h2><%= title %></h2>
+				<a class="mp-back" href="#"><%= WpvPushMenu.back %></a>
+			</div>
+			<ul>
+				<% if(! (/^\s*$/.test(url)) ) { %>
+					<li><a href="<%= _.escape(url) %>" class="<%= _.escape(classes.join(' ')) %>" title="<%= _.escape(attr_title) %>"><%= title %></a></li>
+				<% } %>
+				<%= content %>
+			</ul>
+		</div>
+		<% } else { %>
+		<a href="<%= _.escape(url) %>" class="<%= _.escape(classes.join(' ')) %>" title="<%= _.escape(attr_title) %>"><%= title %></a><% } %></li>
+	</script>
+	<script id='wpvpm-menu-root' type='text/html'>
+		<nav id="mp-menu" class="mp-menu">
+			<ul>
+				<%= content %>
+			</ul>
+		</nav>
+	</script>
+	<link
+		href="./css-1.css?family=Roboto+Condensed:italic%7CLibre+Baskerville:400%2C700%7CRoboto:400%2C500%7CMontserrat:800%2C700"
+		rel="stylesheet" property="stylesheet" media="all" type="text/css">
+	<script type="text/javascript">
+		if (typeof revslider_showDoubleJqueryError === "undefined") {
+			function revslider_showDoubleJqueryError(sliderID) {
+				var err = "<div class='rs_error_message_box'>";
+				err += "<div class='rs_error_message_oops'>Oops...</div>";
+				err += "<div class='rs_error_message_content'>";
+				err += "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
+				err += "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
+				err += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
+				err += "</div>";
+				err += "</div>";
+				var slider = document.getElementById(sliderID); slider.innerHTML = err; slider.style.display = "block";
+			}
+		}
+	</script>
+	<link rel='stylesheet' id='cubeportfolio-css'
+		href='./wp-content/themes/lawyers-attorneys/vamtam/assets/cubeportfolio/css/cubeportfolio.min.css?ver=4.4.0'
+		type='text/css' media='all'>
+	<script type='text/javascript' src='./wp-includes/js/jquery/ui/core.min.js?ver=1.12.1'
+		id='jquery-ui-core-js'></script>
+	<script type='text/javascript' src='./wp-includes/js/jquery/ui/datepicker.min.js?ver=1.12.1'
+		id='jquery-ui-datepicker-js'></script>
+	<script type='text/javascript' id='jquery-ui-datepicker-js-after'>
+		jQuery(document).ready(function (jQuery) { jQuery.datepicker.setDefaults({ "closeText": "Close", "currentText": "Today", "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "nextText": "Next", "prevText": "Previous", "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"], "dateFormat": "MM d, yy", "firstDay": 1, "isRTL": false }); });
+	</script>
+	<script type='text/javascript' src='./wp-content/plugins/booked/assets/js/spin.min.js?ver=2.0.1'
+		id='booked-spin-js-js'></script>
+	<script type='text/javascript' src='./wp-content/plugins/booked/assets/js/spin.jquery.js?ver=2.0.1'
+		id='booked-spin-jquery-js'></script>
+	<script type='text/javascript'
+		src='./wp-content/plugins/booked/assets/js/tooltipster/js/jquery.tooltipster.min.js?ver=3.3.0'
+		id='booked-tooltipster-js'></script>
+	<script type='text/javascript' id='booked-functions-js-extra'>
+		/* <![CDATA[ */
+		var booked_js_vars = { "ajax_url": "https:\/\/lawyers-attorneys.vamtam.com\/wp-admin\/admin-ajax.php", "profilePage": "", "publicAppointments": "", "i18n_confirm_appt_delete": "Are you sure you want to cancel this appointment?", "i18n_please_wait": "Please wait ...", "i18n_wrong_username_pass": "Wrong username\/password combination.", "i18n_fill_out_required_fields": "Please fill out all required fields.", "i18n_guest_appt_required_fields": "Please enter your name to book an appointment.", "i18n_appt_required_fields": "Please enter your name, your email address and choose a password to book an appointment.", "i18n_appt_required_fields_guest": "Please fill in all \"Information\" fields.", "i18n_password_reset": "Please check your email for instructions on resetting your password.", "i18n_password_reset_error": "That username or email is not recognized." };
+/* ]]> */
+	</script>
+	<script type='text/javascript' src='./wp-content/plugins/booked/assets/js/functions.js?ver=2.3'
+		id='booked-functions-js'></script>
+	<script type='text/javascript' src='./wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4'
+		id='wp-polyfill-js'></script>
+	<script type='text/javascript' id='wp-polyfill-js-after'>
+		('fetch' in window) || document.write('<script src="https://lawyers-attorneys.vamtam.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>'); (document.contains) || document.write('<script src="https://lawyers-attorneys.vamtam.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>'); (window.DOMRect) || document.write('<script src="https://lawyers-attorneys.vamtam.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>'); (window.URL && window.URL.prototype && window.URLSearchParams) || document.write('<script src="https://lawyers-attorneys.vamtam.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>'); (window.FormData && window.FormData.prototype.keys) || document.write('<script src="https://lawyers-attorneys.vamtam.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>'); (Element.prototype.matches && Element.prototype.closest) || document.write('<script src="https://lawyers-attorneys.vamtam.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>'); ('objectFit' in document.documentElement.style) || document.write('<script src="https://lawyers-attorneys.vamtam.com/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js?ver=2.3.4"></scr' + 'ipt>');
+	</script>
+	<script type='text/javascript' src='./wp-includes/js/dist/hooks.min.js?ver=50e23bed88bcb9e6e14023e9961698c1'
+		id='wp-hooks-js'></script>
+	<script type='text/javascript' src='./wp-includes/js/dist/i18n.min.js?ver=db9a9a37da262883343e941c3731bc67'
+		id='wp-i18n-js'></script>
+	<script type='text/javascript' id='wp-i18n-js-after'>
+		wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
+	</script>
+	<script type='text/javascript' src='./wp-includes/js/dist/vendor/lodash.min.js?ver=4.17.19' id='lodash-js'></script>
+	<script type='text/javascript' id='lodash-js-after'>
+		window.lodash = _.noConflict();
+	</script>
+	<script type='text/javascript' src='./wp-includes/js/dist/url.min.js?ver=0ac7e0472c46121366e7ce07244be1ac'
+		id='wp-url-js'></script>
+	<script type='text/javascript' id='wp-api-fetch-js-translations'>
+		(function (domain, translations) {
+			var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+			localeData[""].domain = domain;
+			wp.i18n.setLocaleData(localeData, domain);
+		})("default", { "locale_data": { "messages": { "": {} } } });
+	</script>
+	<script type='text/javascript' src='./wp-includes/js/dist/api-fetch.min.js?ver=a783d1f442d2abefc7d6dbd156a44561'
+		id='wp-api-fetch-js'></script>
+	<script type='text/javascript' id='wp-api-fetch-js-after'>
+		wp.apiFetch.use(wp.apiFetch.createRootURLMiddleware("https://lawyers-attorneys.vamtam.com/wp-json/"));
+		wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware("59541dfdc9");
+		wp.apiFetch.use(wp.apiFetch.nonceMiddleware);
+		wp.apiFetch.use(wp.apiFetch.mediaUploadMiddleware);
+		wp.apiFetch.nonceEndpoint = "https://lawyers-attorneys.vamtam.com/wp-admin/admin-ajax.php?action=rest-nonce";
+	</script>
+	<script type='text/javascript' id='contact-form-7-js-extra'>
+		/* <![CDATA[ */
+		var wpcf7 = [];
+/* ]]> */
+	</script>
+	<script type='text/javascript' src='./wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.4'
+		id='contact-form-7-js'></script>
+	<script type='text/javascript' src='./wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.3.1'
+		defer='defer' id='tp-tools-js'></script>
+	<script type='text/javascript' src='./wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.3.1'
+		defer='defer' id='revmin-js'></script>
+	<script type='text/javascript' src='./wp-includes/js/underscore.min.js?ver=1.8.3' id='underscore-js'></script>
+	<script type='text/javascript' src='./wp-includes/js/backbone.min.js?ver=1.4.0' id='backbone-js'></script>
+	<script type='text/javascript' id='vamtam-push-menu-js-extra'>
+		/* <![CDATA[ */
+		var WpvPushMenu = { "items": { "title": "Menu", "description": "", "type": "root", "children": [{ "title": "Home", "description": "", "type": "item", "children": [{ "url": "https:\/\/lawyers-attorneys.vamtam.com\/", "title": "Home", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page", "menu-item-home", "current-menu-ancestor", "current-menu-parent", "current_page_parent", "current_page_ancestor"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/single-lawyer\/", "title": "Home - Single Lawyer", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page", "current-menu-item", "page_item", "page-item-9404", "current_page_item"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/home-layouts\/home\/get-all-codes\/", "title": "Get all codes", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, { "title": "About", "description": "", "type": "item", "children": [{ "url": "https:\/\/lawyers-attorneys.vamtam.com\/about\/", "title": "About", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/reviews\/", "title": "Testimonials", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/clients\/", "title": "Clients", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "title": "Gallery", "description": "", "type": "item", "children": [{ "url": "https:\/\/lawyers-attorneys.vamtam.com\/portfolio-layouts\/masonry-style\/", "title": "Gallery", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/portfolio-layouts\/masonry-style\/", "title": "Masonry Style", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/video-gallery\/", "title": "Videos", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/portfolio-layouts\/sortable-1-column\/", "title": "Portfolio 1 column", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/portfolio-layouts\/sortable-4-columns\/", "title": "Gallery Style Portfolio", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/portfolio-layouts\/sortable-2-columns\/", "title": "Portfolio with Load More", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/portfolio-layouts\/get-all-codes\/", "title": "Get all codes", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/about\/get-all-codes\/", "title": "Get all codes", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, { "title": "Attorneys", "description": "", "type": "item", "children": [{ "url": "https:\/\/lawyers-attorneys.vamtam.com\/attorneys\/", "title": "Attorneys", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/attorneys\/ashley-fletcher\/", "title": "Ashley Fletcher", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/attorneys\/ben-jonson\/", "title": "Ben Jonson", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/attorneys\/john-macein\/", "title": "John Macein", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/attorneys\/rodney-stratton\/", "title": "Rodney Stratton", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/attorneys\/get-all-codes\/", "title": "Get all codes", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, { "title": "News", "description": "", "type": "item", "children": [{ "url": "https:\/\/lawyers-attorneys.vamtam.com\/blog\/blog-layout-3\/", "title": "News", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/blog\/blog-layout-3\/", "title": "Newspaper Style", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/blog\/blog-layout-1\/", "title": "Blog Layout 1", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/blog\/blog-layout-2\/", "title": "Blog Layout 2", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/blog\/blog-post-formats\/", "title": "Blog Post Formats", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/blog\/get-all-codes\/", "title": "Get all codes", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, { "title": "Features", "description": "", "type": "item", "children": [{ "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/theme-options-2\/", "title": "Theme Options", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "title": "Elements", "description": "", "type": "item", "children": [{ "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/elements\/typography\/", "title": "Typography", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/elements\/icons\/", "title": "Icons", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, { "title": "Templates", "description": "", "type": "item", "children": [{ "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/templates\/body-top-widget-area\/", "title": "Body Top Widget Area", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/templates\/left-sidebar\/", "title": "Left Sidebar", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/templates\/maintenance-mode\/", "title": "Maintenance Mode", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/templates\/right-sidebar\/", "title": "Right Sidebar", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/templates\/two-sidebars\/", "title": "Two Sidebars", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/features\/why-buy-the-theme\/", "title": "Why Buy The Theme", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/practice-areas\/", "title": "Practice Areas", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/qa\/", "title": "Q&A", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }, { "url": "https:\/\/lawyers-attorneys.vamtam.com\/contact-us\/", "title": "Contacts", "attr_title": "", "description": "", "classes": ["", "menu-item", "menu-item-type-post_type", "menu-item-object-page"], "type": "item", "children": [] }] }, "back": "Back", "jspath": "https:\/\/lawyers-attorneys.vamtam.com\/wp-content\/plugins\/vamtam-push-menu\/js\/", "limit": "959" };
+/* ]]> */
+	</script>
+	<script type='text/javascript' src='./wp-content/plugins/vamtam-push-menu/js/dist/push-menu.min.js?ver=2.0.13'
+		id='vamtam-push-menu-js'></script>
+	<script type='text/javascript' id='booked-fea-js-js-extra'>
+		/* <![CDATA[ */
+		var booked_fea_vars = { "ajax_url": "https:\/\/lawyers-attorneys.vamtam.com\/wp-admin\/admin-ajax.php", "i18n_confirm_appt_delete": "Are you sure you want to cancel this appointment?", "i18n_confirm_appt_approve": "Are you sure you want to approve this appointment?" };
+/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src='./wp-content/plugins/booked/includes/add-ons/frontend-agents/js/functions.js?ver=2.3'
+		id='booked-fea-js-js'></script>
+	<script type='text/javascript'
+		src='./wp-content/themes/lawyers-attorneys/vamtam/assets/js/plugins/thirdparty/jquery.transit.min.js?ver=0.9.9'
+		id='jquery-transit-js'></script>
+	<script type='text/javascript'
+		src='./wp-content/themes/lawyers-attorneys/vamtam/assets/js/plugins/thirdparty/jquery.matchheight.min.js?ver=0.5.1'
+		id='jquery-match-height-js'></script>
+	<script type='text/javascript' src='./wp-includes/js/jquery/ui/effect.min.js?ver=1.12.1'
+		id='jquery-effects-core-js'></script>
+	<script type='text/javascript' id='vamtam-all-js-extra'>
+		/* <![CDATA[ */
+		var VAMTAM_FRONT = { "content_width": "1260", "cube_path": "https:\/\/lawyers-attorneys.vamtam.com\/wp-content\/themes\/lawyers-attorneys\/vamtam\/assets\/cubeportfolio\/js\/jquery.cubeportfolio.min.js", "ajaxurl": "https:\/\/lawyers-attorneys.vamtam.com\/wp-admin\/admin-ajax.php", "gmap_api_key": "AIzaSyB3xkOvHVgXNdDnPypL561Z2aWyEO1Xt9w" };
+/* ]]> */
+	</script>
+	<script type='text/javascript' src='./wp-content/themes/lawyers-attorneys/vamtam/assets/js/all.min.js?ver=19'
+		id='vamtam-all-js'></script>
+	<script type='text/javascript'
+		src='./wp-content/themes/lawyers-attorneys/vamtam/assets/js/plugins/thirdparty/select2.min.js?ver=1.4.1'
+		id='select2-js'></script>
+	<script type='text/javascript' src='./wp-includes/js/wp-embed.min.js?ver=5.7.2' id='wp-embed-js'></script>
+	<script type='text/javascript'
+		src='./wp-content/themes/lawyers-attorneys/vamtam/assets/cubeportfolio/js/jquery.cubeportfolio.min.js?ver=4.4.0'
+		id='cubeportfolio-js'></script>
+	<script type="text/javascript">
+		setREVStartSize({ c: 'rev_slider_17_1', rl: [1240, 1240, 778, 480], el: [720, 720, 500, 500], gw: [1200, 1200, 778, 480], gh: [720, 720, 500, 500], type: 'standard', justify: '', layout: 'fullwidth', mh: "0" });
+		var revapi17,
+			tpj;
+		function revinit_revslider171() {
+			jQuery(function () {
+				tpj = jQuery;
+				revapi17 = tpj("#rev_slider_17_1");
+				tpj.noConflict();
+				if (revapi17 == undefined || revapi17.revolution == undefined) {
+					revslider_showDoubleJqueryError("rev_slider_17_1");
+				} else {
+					revapi17.revolution({
+						visibilityLevels: "1240,1240,778,480",
+						gridwidth: "1200,1200,778,480",
+						gridheight: "720,720,500,500",
+						minHeight: "none",
+						lazyType: "all",
+						spinner: "spinner2",
+						perspectiveType: "local",
+						editorheight: "720,768,500,500",
+						responsiveLevels: "1240,1240,778,480",
+						progressBar: { disableProgressBar: true },
+						navigation: {
+							keyboardNavigation: true,
+							mouseScrollNavigation: false,
+							onHoverStop: false,
+							touch: {
+								touchenabled: true,
+								swipe_threshold: 0
+							}/*,
+							arrows: {
+								enable: true,
+								style: "custom",
+								hide_onleave: true,
+								left: {
+
+								},
+								right: {
+
+								}
+							}*/
+						},
+						fallbacks: {
+							allowHTML5AutoPlayOnAndroid: true
+						},
+					});
+				}
+
+			});
+		} // End of RevInitScript
+		var once_revslider171 = false;
+		if (document.readyState === "loading") { document.addEventListener('readystatechange', function () { if ((document.readyState === "interactive" || document.readyState === "complete") && !once_revslider171) { once_revslider171 = true; revinit_revslider171(); } }); } else { once_revslider171 = true; revinit_revslider171(); }
+	</script>
+	<!--
+	<script>
+		var htmlDivCss = unescape(".tparrows.custom%20%7B%0A%09-webkit-border-radius%3A%204px%20%21important%3B%0A%09border-radius%3A%204px%20%21important%3B%0A%09transition%3A%20all%200.3s%20%21important%3B%0A%7D%0A.custom.tparrows%3Abefore%7B%0A%09font-size%3A%2020px%20%21important%3B%0A%7D");
+		var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+		if (htmlDiv) {
+			htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+		} else {
+			var htmlDiv = document.createElement('div');
+			htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+			document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+		}
+	</script>-->
+	<script>
+		var htmlDivCss = ' #rev_slider_17_1_wrapper rs-loader.spinner2{ background-color: #FFFFFF !important; } ';
+		var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+		if (htmlDiv) {
+			htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+		} else {
+			var htmlDiv = document.createElement('div');
+			htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+			document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+		}
+	</script>
+	<!--<script>
+		var htmlDivCss = unescape("%23rev_slider_17_1_wrapper%20.custom.tparrows%20%7B%0A%09cursor%3Apointer%3B%0A%09background%3A%23000%3B%0A%09background%3Argba%280%2C0%2C0%2C0.5%29%3B%0A%09width%3A40px%3B%0A%09height%3A40px%3B%0A%09position%3Aabsolute%3B%0A%09display%3Ablock%3B%0A%09z-index%3A1000%3B%0A%7D%0A%23rev_slider_17_1_wrapper%20.custom.tparrows%3Ahover%20%7B%0A%09background%3A%23000%3B%0A%7D%0A%23rev_slider_17_1_wrapper%20.custom.tparrows%3Abefore%20%7B%0A%09font-family%3A%20%27revicons%27%3B%0A%09font-size%3A15px%3B%0A%09color%3A%23fff%3B%0A%09display%3Ablock%3B%0A%09line-height%3A%2040px%3B%0A%09text-align%3A%20center%3B%0A%7D%0A%23rev_slider_17_1_wrapper%20.custom.tparrows.tp-leftarrow%3Abefore%20%7B%0A%09content%3A%20%27%5Ce824%27%3B%0A%7D%0A%23rev_slider_17_1_wrapper%20.custom.tparrows.tp-rightarrow%3Abefore%20%7B%0A%09content%3A%20%27%5Ce825%27%3B%0A%7D%0A%0A%0A");
+		var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+		if (htmlDiv) {
+			htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+		} else {
+			var htmlDiv = document.createElement('div');
+			htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+			document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+		}
+	</script>-->
+
+	<script
+		type="text/javascript">window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam.nr-data.net", "licenseKey": "9700abca30", "applicationID": "9339867", "transactionName": "YFUHbUVUDBZZAkZZXFkfJFpDXA0LFxFTV1Y=", "queueTime": 0, "applicationTime": 997, "atts": "TBIEGw1OHxg=", "errorBeacon": "bam.nr-data.net", "agent": "" }</script>
+</body>
+
+</html>
